@@ -201,8 +201,16 @@
   .detail .dh { position: sticky; top: 0; z-index: 1; background: var(--paper); display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 28px 32px 18px; border-bottom: 1px solid var(--rule); }
   .detail .dh h3 { font: 800 32px/1.05 var(--display); letter-spacing: -.025em; margin: 0 0 6px; }
   .detail .dh p { margin: 0; color: var(--ink-2); font-size: 15px; }
-  .detail .x { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule); background: var(--page); color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; }
-  .detail .x:hover { border-color: var(--ink); }
+  .detail .x {
+    flex: none; display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 16px 0 12px;
+    border: 0; border-radius: 999px; background: var(--ink); color: #fff;
+    font: 600 15px/1 var(--body); cursor: pointer; transition: background .15s;
+  }
+  .detail .x svg { width: 18px; height: 18px; }
+  .detail .x:hover { background: var(--cobalt); }
+  .detail .x:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+  html.locked, html.locked body { overflow: hidden; }
+  dialog.detail { overscroll-behavior: contain; }
   .detail .db { padding: 8px 32px 32px; }
   .detail h4 { font: 700 19px/1.25 var(--display); margin: 26px 0 8px; }
   .detail p { margin: 0 0 10px; }
@@ -217,7 +225,9 @@
   @media (max-width: 680px) {
     dialog.detail { width: 100vw; max-width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; margin: 0; }
     .detail .dh { padding: 20px 18px 14px; }
-    .detail .dh h3 { font-size: 26px; }
+    .detail .dh h3 { font-size: 24px; }
+    .detail .dh p { font-size: 13.5px; line-height: 1.45; }
+    .detail .x { height: 40px; padding: 0 14px 0 10px; font-size: 14px; }
     .detail .db { padding: 4px 18px 28px; }
   }
 
@@ -521,7 +531,7 @@
 <dialog class="detail" id="d-studymind" aria-labelledby="d-studymind-t">
   <div class="dh">
     <div><h3 id="d-studymind-t">StudyMind</h3><p><span lang="en">AI study assistant, personal project, 2026</span><span lang="de">KI-Lernassistent, eigenes Projekt, 2026</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <img class="shotd" src="studymind.jpg" width="1600" height="684" loading="lazy" alt="StudyMind answer with the cited PDF page opened next to it">
@@ -551,7 +561,7 @@
 <dialog class="detail" id="d-living" aria-labelledby="d-living-t">
   <div class="dh">
     <div><h3 id="d-living-t">Living Smarter</h3><p><span lang="en">LLM voice assistant for smart homes, research project, Hochschule Bremen, 2025</span><span lang="de">LLM-Sprachassistent für Smart Homes, Forschungsprojekt, Hochschule Bremen, 2025</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">The idea</h4>
@@ -576,7 +586,7 @@
 <dialog class="detail" id="d-ccai" aria-labelledby="d-ccai-t">
   <div class="dh">
     <div><h3 id="d-ccai-t">CCAI: Cyber Crime based on AI</h3><p><span lang="en">Multi-agent research demonstrator, Master's team project, 2024–2025</span><span lang="de">Multi-Agenten-Forschungsdemonstrator, Masterprojekt im Team, 2024–2025</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">The idea</h4>
@@ -599,7 +609,7 @@
 <dialog class="detail" id="d-nearby" aria-labelledby="d-nearby-t">
   <div class="dh">
     <div><h3 id="d-nearby-t">Nearby Activity Finder</h3><p><span lang="en">Mobile app, team project, Hochschule Bremen, 2025</span><span lang="de">Mobile App, Teamprojekt, Hochschule Bremen, 2025</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">The idea</h4>
@@ -620,7 +630,7 @@
 <dialog class="detail" id="d-freelance" aria-labelledby="d-freelance-t">
   <div class="dh">
     <div><h3 id="d-freelance-t"><span lang="en">Freelance logistics platform</span><span lang="de">Logistikplattform (freiberuflich)</span></h3><p><span lang="en">Client projects, 11/2022 – 06/2023</span><span lang="de">Kundenprojekte, 11/2022 – 06/2023</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">E-commerce and shipping platform</h4>
@@ -641,7 +651,7 @@
 <dialog class="detail" id="d-shipflow" aria-labelledby="d-shipflow-t">
   <div class="dh">
     <div><h3 id="d-shipflow-t">ShipFlow</h3><p><span lang="en">Event-driven logistics backend, personal project, in progress</span><span lang="de">Ereignisgesteuertes Logistik-Backend, eigenes Projekt, in Arbeit</span></p></div>
-    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">Why this project</h4>
@@ -688,11 +698,30 @@
       });
     });
 
-    var opener = null;
+    var opener = null, savedY = 0;
+    function lockScroll() {
+      savedY = window.scrollY;
+      root.classList.add("locked");
+      document.body.style.position = "fixed";
+      document.body.style.top = -savedY + "px";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+    }
+    function unlockScroll() {
+      root.classList.remove("locked");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, savedY);
+      root.style.scrollBehavior = "";
+    }
     function openDetail(id) {
       var d = document.getElementById(id);
       if (!d || d.open) return;
       opener = document.activeElement;
+      lockScroll();
       d.showModal();
       d.scrollTop = 0;
       var body = d.querySelector(".db"); if (body) body.scrollTop = 0;
@@ -710,7 +739,7 @@
     document.querySelectorAll("dialog.detail").forEach(function (d) {
       d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
       d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
-      d.addEventListener("close", function () { if (opener && opener.focus) opener.focus(); });
+      d.addEventListener("close", function () { unlockScroll(); if (opener && opener.focus) opener.focus({ preventScroll: true }); });
     });
   })();
 </script>
