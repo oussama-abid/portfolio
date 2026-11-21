@@ -2,6 +2,8 @@
 
 Personal portfolio of Oussama Ben Abid, Computer Science Master's student at Hochschule Bremen.
 
+Live: https://oussama-ben-abid.vercel.app
+
 A single static page in English and German with projects, experience, skills and CV.
 
 ## Run locally
