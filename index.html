@@ -5,124 +5,213 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Oussama Ben Abid · Software Developer</title>
 <meta name="description" content="Computer Science Master's student at Hochschule Bremen. Full-stack developer: Java, Spring Boot, Python, FastAPI, React, Angular.">
+<meta property="og:title" content="Oussama Ben Abid · Software Developer">
+<meta property="og:description" content="Full-stack developer in Bremen. Projects, experience and CV.">
+<meta property="og:image" content="https://oussama-ben-abid.vercel.app/studymind.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313213A'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='%23fff' text-anchor='middle'%3EOB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --surface: #f5f6f8;
-    --text: #15181d;
-    --muted: #5b6270;
-    --line: #e3e6eb;
-    --accent: #1f4fd1;
-    --accent-soft: #e8eefc;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1115;
-      --surface: #171a20;
-      --text: #eceef2;
-      --muted: #9aa2b1;
-      --line: #262a33;
-      --accent: #7ea2ff;
-      --accent-soft: #1b2340;
-    }
+    --page: #F4F6FA;
+    --paper: #FFFFFF;
+    --ink: #13213A;
+    --ink-2: #4A5874;
+    --rule: #DCE2EC;
+    --cobalt: #2346D8;
+    --cobalt-tint: #E4EAFF;
+    --pass: #1E9E5A;
+    --night: #13213A;
+    --night-2: #1C2D4D;
+    --night-text: #C9D4EA;
+    --display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+    --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+    color-scheme: light;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--page);
+    color: var(--ink);
+    font: 400 17px/1.65 var(--body);
     -webkit-font-smoothing: antialiased;
   }
-  html[data-lang="en"] [lang="de"], html[data-lang="de"] [lang="en"]:not(html) { display: none; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  html[data-lang="en"] [lang="de"], html[data-lang="de"] [lang="en"]:not(html) { display: none !important; }
+  a { color: var(--cobalt); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 6px; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  header.top {
-    position: sticky; top: 0; z-index: 10;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
-  }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 56px; }
-  .brand { font-weight: 700; color: var(--text); }
-  nav.links { display: flex; gap: 20px; font-size: 15px; }
-  nav.links a { color: var(--muted); }
-  nav.links a:hover { color: var(--text); text-decoration: none; }
-  .lang { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-  .lang button {
-    border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 13px; font-weight: 600;
-    padding: 4px 10px; cursor: pointer;
-  }
-  .lang button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+  .bar { position: sticky; top: 0; z-index: 20; background: rgba(244,246,250,.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .bar .wrap { display: flex; align-items: center; gap: 28px; height: 60px; }
+  .mark { font: 800 19px/1 var(--display); color: var(--ink); text-decoration: none; letter-spacing: -.01em; margin-right: auto; }
+  .bar nav { display: flex; gap: 24px; }
+  .bar nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .bar nav a:hover { color: var(--ink); }
+  .lang { display: inline-flex; background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 3px; }
+  .lang button { border: 0; background: none; font: 600 13px/1 var(--body); color: var(--ink-2); padding: 7px 12px; border-radius: 999px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: #fff; }
 
-  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
-  section:last-of-type { border-bottom: 0; }
-  h1 { font-size: clamp(34px, 6vw, 48px); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 12px; }
-  h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 24px; font-weight: 700; }
-  h3 { font-size: 20px; margin: 0; line-height: 1.3; }
-  .lead { font-size: 20px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
-  .hero { padding-top: 72px; }
-  .available {
-    display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted);
-    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; margin-bottom: 20px;
+  .hero { padding: 88px 0 96px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .hello { font-size: 18px; color: var(--ink-2); margin: 0 0 14px; font-weight: 500; }
+  .hero h1 {
+    font: 800 clamp(46px, 7vw, 84px)/.95 var(--display);
+    letter-spacing: -.035em; margin: 0 0 26px;
   }
-  .available::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #1f9d55; }
-  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero .pitch { font-size: 20px; line-height: 1.55; color: var(--ink-2); max-width: 34em; margin: 0 0 34px; }
+  .hero .pitch strong { color: var(--ink); font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
   .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px;
-    border: 1px solid var(--line); color: var(--text); font-weight: 600; font-size: 15px;
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+    font: 600 16px/1 var(--body); padding: 15px 22px; border-radius: 12px;
+    color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+    transition: border-color .15s, transform .15s;
   }
-  .btn:hover { text-decoration: none; border-color: var(--muted); }
-  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn:hover { border-color: var(--ink); }
+  .btn:active { transform: translateY(1px); }
+  .btn.solid { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+  .btn.solid:hover { background: #1B3AB8; border-color: #1B3AB8; }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .status { margin-top: 30px; display: flex; align-items: center; gap: 10px; color: var(--ink-2); font-size: 15px; }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: var(--pass); box-shadow: 0 0 0 4px rgba(30,158,90,.16); }
 
-  .project { padding: 28px 0; border-top: 1px solid var(--line); }
-  .project:first-of-type { border-top: 0; padding-top: 0; }
-  .project .meta { color: var(--muted); font-size: 14px; margin: 4px 0 12px; }
-  .project p { margin: 0 0 12px; }
-  .project ul { margin: 0 0 14px; padding-left: 20px; }
-  .project li { margin-bottom: 4px; }
-  .shot { display: block; width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 4px 0 16px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
-  .tags li { font-size: 13px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; margin: 0; }
-  .plinks { display: flex; flex-wrap: wrap; gap: 16px; font-size: 15px; font-weight: 600; }
-  .badge { font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 8px; vertical-align: middle; margin-left: 6px; }
+  .run {
+    background: var(--night); color: var(--night-text); border-radius: 18px;
+    font: 400 14.5px/1.75 var(--mono); padding: 0 0 22px; overflow: hidden;
+    box-shadow: 0 30px 60px -30px rgba(19,33,58,.55);
+  }
+  .run header { display: flex; align-items: center; gap: 8px; padding: 14px 18px; background: var(--night-2); color: #8C9BBA; font-size: 13px; }
+  .run header b { width: 11px; height: 11px; border-radius: 50%; background: #34476C; }
+  .run header span { margin-left: 10px; }
+  .run ol { list-style: none; margin: 0; padding: 18px 22px 0; }
+  .run li { display: grid; grid-template-columns: 22px 92px 1fr auto; gap: 8px; white-space: nowrap; }
+  .run li.cmd { display: block; color: #fff; margin-bottom: 6px; }
+  .run li.cmd::before { content: "$ "; color: #7F93BF; }
+  .run .ok { color: #4ED38A; }
+  .run .step { color: #fff; }
+  .run .t { color: #6F80A6; text-align: right; }
+  .run .live { margin: 16px 22px 0; padding: 14px 16px; border-radius: 12px; background: var(--night-2); color: #fff; font-family: var(--body); font-size: 15px; line-height: 1.45; }
+  .run .live a { color: #9DB4FF; font-weight: 600; }
+  .run .live small { display: block; color: var(--night-text); font-size: 13.5px; margin-top: 2px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .run li, .js .run .live { opacity: 0; transform: translateY(4px); animation: line .35s ease forwards; }
+    .js .run li:nth-child(1) { animation-delay: .2s; }
+    .js .run li:nth-child(2) { animation-delay: .75s; }
+    .js .run li:nth-child(3) { animation-delay: 1.15s; }
+    .js .run li:nth-child(4) { animation-delay: 1.55s; }
+    .js .run li:nth-child(5) { animation-delay: 1.95s; }
+    .js .run .live { animation-delay: 2.45s; }
+  }
+  @keyframes line { to { opacity: 1; transform: none; } }
 
-  .row { display: grid; grid-template-columns: 150px 1fr; gap: 4px 24px; padding: 14px 0; border-top: 1px solid var(--line); }
-  .row:first-of-type { border-top: 0; padding-top: 0; }
-  .row .when { color: var(--muted); font-size: 15px; }
-  .row h3 { font-size: 17px; }
-  .row .where { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
-  .row p { margin: 0; }
+  section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
+  .head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: end; margin-bottom: 52px; }
+  .head h2 { font: 800 clamp(34px, 4.6vw, 52px)/1 var(--display); letter-spacing: -.03em; margin: 0; }
+  .head p { margin: 0; color: var(--ink-2); max-width: 36em; }
 
-  .skills { display: grid; grid-template-columns: 170px 1fr; gap: 10px 24px; margin: 0; }
-  .skills dt { color: var(--muted); font-size: 15px; }
-  .skills dd { margin: 0; }
+  .feature { background: var(--paper); border: 1px solid var(--rule); border-radius: 24px; overflow: hidden; display: grid; grid-template-columns: 1.25fr 1fr; }
+  .feature .shot { background: linear-gradient(160deg, #E4EAFF, #F4F6FA); padding: 36px 0 0 36px; display: flex; align-items: flex-end; }
+  .feature .shot img { border-radius: 12px 0 0 0; border: 1px solid var(--rule); border-bottom: 0; border-right: 0; box-shadow: 0 20px 40px -24px rgba(19,33,58,.45); width: 100%; height: 100%; object-fit: cover; object-position: 78% top; }
+  .feature .text { padding: 40px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--pass); background: rgba(30,158,90,.1); border-radius: 999px; padding: 5px 12px; margin-bottom: 18px; }
+  .pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--pass); }
+  .pill.wip { color: var(--cobalt); background: var(--cobalt-tint); }
+  .pill.wip i { background: var(--cobalt); }
+  .feature h3, .proj h3 { font: 700 30px/1.1 var(--display); letter-spacing: -.02em; margin: 0 0 6px; }
+  .kind { color: var(--ink-2); font-size: 15px; margin: 0 0 18px; }
+  .feature p.desc { margin: 0 0 24px; }
+  .nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 26px; }
+  .nums div { border-top: 2px solid var(--ink); padding-top: 10px; }
+  .nums b { display: block; font: 800 28px/1.1 var(--display); letter-spacing: -.02em; }
+  .nums span { font-size: 14px; color: var(--ink-2); line-height: 1.4; display: block; }
+  .stack { font-size: 14.5px; color: var(--ink-2); margin: 0 0 22px; }
+  .stack strong { color: var(--ink); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .links .btn { padding: 11px 16px; font-size: 15px; }
 
-  .contact p { margin: 0 0 20px; max-width: 620px; }
-  footer { color: var(--muted); font-size: 14px; padding: 28px 0 48px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
+  .proj { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 32px; display: flex; flex-direction: column; }
+  .proj h3 { font-size: 25px; }
+  .proj p { margin: 0 0 18px; }
+  .proj .mine { font-size: 15.5px; color: var(--ink-2); border-left: 3px solid var(--cobalt); padding-left: 14px; }
+  .proj .links { margin-top: auto; }
+  .proj.wide { grid-column: 1 / -1; background: var(--ink); color: #fff; border-color: var(--ink); display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; }
+  .proj.wide .kind, .proj.wide .stack { color: var(--night-text); }
+  .proj.wide .stack strong { color: #fff; }
+  .proj.wide .btn { background: transparent; color: #fff; border-color: #3A4E78; }
+  .proj.wide .btn:hover { border-color: #fff; }
+  .proj.wide .pill.wip { background: rgba(157,180,255,.15); color: #9DB4FF; }
+  .proj.wide .pill.wip i { background: #9DB4FF; }
+  .flow { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; align-self: center; }
+  .flow li { display: flex; gap: 14px; align-items: baseline; background: var(--night-2); border-radius: 12px; padding: 12px 16px; font-size: 15.5px; }
+  .flow b { font: 700 15px/1 var(--display); color: #9DB4FF; min-width: 1.2em; }
 
-  @media (max-width: 640px) {
+  .timeline { list-style: none; margin: 0; padding: 0; max-width: 860px; }
+  .timeline li { display: grid; grid-template-columns: 170px 1fr; gap: 32px; padding: 0 0 36px; position: relative; }
+  .timeline li::before { content: ""; position: absolute; left: 190px; top: 8px; bottom: 0; width: 2px; background: var(--rule); }
+  .timeline li:last-child::before { display: none; }
+  .timeline li::after { content: ""; position: absolute; left: 185px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--page); border: 2px solid var(--ink); }
+  .timeline li.now::after { background: var(--cobalt); border-color: var(--cobalt); }
+  .timeline time { font-weight: 600; font-size: 15px; color: var(--ink-2); padding-top: 1px; }
+  .timeline .body { padding-left: 32px; }
+  .timeline h3 { font: 700 21px/1.25 var(--display); letter-spacing: -.01em; margin: 0; }
+  .timeline .org { color: var(--ink-2); margin: 2px 0 8px; font-size: 15.5px; }
+  .timeline p { margin: 0; max-width: 38em; }
+
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .skills div { background: var(--paper); border: 1px solid var(--rule); border-radius: 18px; padding: 26px; }
+  .skills h3 { font: 700 19px/1.2 var(--display); margin: 0 0 10px; }
+  .skills p { margin: 0; color: var(--ink-2); font-size: 16px; }
+
+  .contact { background: var(--ink); color: #fff; padding: 104px 0; }
+  .contact h2 { font: 800 clamp(40px, 6.4vw, 76px)/1 var(--display); letter-spacing: -.035em; margin: 0 0 22px; max-width: 13em; }
+  .contact p { color: var(--night-text); font-size: 19px; max-width: 34em; margin: 0 0 36px; }
+  .contact .mail { display: inline-block; font: 700 clamp(22px, 3.4vw, 36px)/1.2 var(--display); color: #fff; text-decoration: none; border-bottom: 3px solid #9DB4FF; padding-bottom: 4px; margin-bottom: 36px; word-break: break-all; }
+  .contact .mail:hover { color: #9DB4FF; }
+  .contact .btn { background: transparent; color: #fff; border-color: #3A4E78; }
+  .contact .btn:hover { border-color: #fff; }
+  footer { background: var(--ink); color: #7F8FB0; font-size: 14px; padding: 0 0 40px; }
+  footer .wrap { border-top: 1px solid #2A3B5E; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 960px) {
+    .hero .wrap, .feature, .head, .proj.wide { grid-template-columns: 1fr; }
+    .hero { padding: 56px 0 72px; }
+    .feature .shot { padding: 24px 0 0 24px; max-height: 360px; }
+    .skills { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 680px) {
     body { font-size: 16px; }
-    nav.links { display: none; }
-    section { padding: 44px 0; }
-    .hero { padding-top: 48px; }
-    .lead { font-size: 18px; }
-    .row, .skills { grid-template-columns: 1fr; }
-    .row .when, .skills dt { font-size: 14px; }
+    .wrap { padding: 0 16px; }
+    .bar nav { display: none; }
+    .hero .pitch { font-size: 18px; }
+    .run { font-size: 12.5px; }
+    .run li { grid-template-columns: 18px 72px 1fr; }
+    .run .t { display: none; }
+    section.block { padding: 72px 0; }
+    .head { margin-bottom: 36px; gap: 14px; }
+    .feature .text, .proj { padding: 26px 22px; }
+    .grid, .skills { grid-template-columns: 1fr; }
+    .nums b { font-size: 23px; }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; padding-left: 28px; }
+    .timeline li::before { left: 5px; }
+    .timeline li::after { left: 0; }
+    .timeline .body { padding-left: 0; }
+    .contact { padding: 80px 0; }
   }
 </style>
 </head>
 <body>
 
-<header class="top">
+<div class="bar">
   <div class="wrap">
-    <a class="brand" href="#">Oussama Ben Abid</a>
-    <nav class="links" aria-label="Sections">
-      <a href="#projects"><span lang="en">Projects</span><span lang="de">Projekte</span></a>
-      <a href="#experience"><span lang="en">Experience</span><span lang="de">Erfahrung</span></a>
+    <a class="mark" href="#top">Oussama Ben Abid</a>
+    <nav aria-label="Sections">
+      <a href="#work"><span lang="en">Work</span><span lang="de">Projekte</span></a>
+      <a href="#path"><span lang="en">Experience</span><span lang="de">Werdegang</span></a>
       <a href="#skills"><span lang="en">Skills</span><span lang="de">Kenntnisse</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
     </nav>
@@ -131,240 +220,253 @@
       <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
     </div>
   </div>
-</header>
+</div>
 
-<main class="wrap">
-
+<main id="top">
   <section class="hero">
-    <span class="available">
-      <span lang="en">Open to working student roles in Bremen or remote</span>
-      <span lang="de">Offen für Werkstudentenstellen in Bremen oder remote</span>
-    </span>
-    <h1>
-      <span lang="en">Full-stack developer who ships tested software.</span>
-      <span lang="de">Full-Stack-Entwickler, der getestete Software ausliefert.</span>
-    </h1>
-    <p class="lead">
-      <span lang="en">I'm a Computer Science Master's student at Hochschule Bremen. I build web applications end to end, from the database to automated deployment, with Java, Spring Boot, Python, FastAPI, React and Angular, and I integrate AI where it actually helps.</span>
-      <span lang="de">Ich bin Masterstudent der Informatik an der Hochschule Bremen. Ich entwickle Webanwendungen von der Datenbank bis zum automatisierten Deployment, mit Java, Spring Boot, Python, FastAPI, React und Angular, und setze KI dort ein, wo sie wirklich hilft.</span>
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="#projects"><span lang="en">See my projects</span><span lang="de">Projekte ansehen</span></a>
-      <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf"><span lang="en">CV (PDF, German)</span><span lang="de">Lebenslauf (PDF)</span></a>
-      <a class="btn" href="https://github.com/oussama-abid">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/">LinkedIn</a>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2><span lang="en">Projects</span><span lang="de">Projekte</span></h2>
-
-    <article class="project">
-      <h3>StudyMind <span class="badge">Live</span></h3>
-      <p class="meta">
-        <span lang="en">AI study assistant · Personal project · 2026</span>
-        <span lang="de">KI-Lernassistent · Eigenes Projekt · 2026</span>
-      </p>
-      <img class="shot" src="studymind.jpg" width="1600" height="684" loading="lazy"
-           alt="StudyMind answering a question about a Docker lecture, with the cited PDF page open next to the answer">
-      <p>
-        <span lang="en">Students upload their lecture PDFs and ask questions. StudyMind answers only from their own documents and cites the pages it used; one click opens the PDF at that page.</span>
-        <span lang="de">Studierende laden ihre Vorlesungs-PDFs hoch und stellen Fragen. StudyMind antwortet nur aus den eigenen Unterlagen und nennt die verwendeten Seiten; ein Klick öffnet das PDF an dieser Seite.</span>
-      </p>
-      <ul lang="en">
-        <li>Retrieval-augmented generation: chunking, Gemini embeddings and vector search in PostgreSQL with pgvector</li>
-        <li>Response time of the language model cut from over 40 s (timeouts) to 0.6 s by measuring several models and switching to Groq</li>
-        <li>Every merge is tested (110 tests) and deployed automatically to Azure and Vercel with GitHub Actions</li>
-      </ul>
-      <ul lang="de">
-        <li>Retrieval-Augmented Generation: Chunking, Gemini-Embeddings und Vektorsuche in PostgreSQL mit pgvector</li>
-        <li>Antwortzeit des Sprachmodells von über 40 s (Timeouts) auf 0,6 s gesenkt, durch Messung mehrerer Modelle und Wechsel zu Groq</li>
-        <li>Jeder Merge wird getestet (110 Tests) und mit GitHub Actions automatisch auf Azure und Vercel ausgerollt</li>
-      </ul>
-      <ul class="tags" aria-label="Technologies">
-        <li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>pgvector</li><li>Docker</li><li>GitHub Actions</li><li>Azure</li>
-      </ul>
-      <div class="plinks">
-        <a href="https://studymind-neon.vercel.app">Live demo</a>
-        <a href="https://github.com/oussama-abid/studymind">Code</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <h3>Living Smarter</h3>
-      <p class="meta">
-        <span lang="en">LLM voice assistant for smart homes · Research project, Hochschule Bremen · 2025</span>
-        <span lang="de">LLM-Sprachassistent für Smart Homes · Forschungsprojekt, Hochschule Bremen · 2025</span>
-      </p>
-      <p>
-        <span lang="en">The prototype behind a joint research paper: an orchestrator on Google Gemini splits natural commands into tasks and runs them with tools (simulated smart home, web search, YouTube, Gmail, voice).</span>
-        <span lang="de">Der Prototyp zu einer gemeinsamen wissenschaftlichen Arbeit: Ein Orchestrator auf Basis von Google Gemini zerlegt Befehle in Teilaufgaben und führt sie über Tools aus (simuliertes Smart Home, Websuche, YouTube, Gmail, Sprache).</span>
-      </p>
-      <ul lang="en">
-        <li>100 % intent recognition and 72 % task success in 36 test cases</li>
-        <li>Unit tests with a fake LLM found and fixed two bugs in device control</li>
-        <li>A reproducible evaluation script reruns the study without side effects</li>
-      </ul>
-      <ul lang="de">
-        <li>100 % Intentionserkennung und 72 % erfolgreiche Aufgaben in 36 Testfällen</li>
-        <li>Unit-Tests mit einem Fake-LLM fanden zwei Fehler in der Gerätesteuerung</li>
-        <li>Ein reproduzierbares Evaluationsskript wiederholt die Studie ohne Seiteneffekte</li>
-      </ul>
-      <ul class="tags" aria-label="Technologies">
-        <li>Python</li><li>Google Gemini</li><li>SQLite</li><li>pytest</li><li>Docker</li>
-      </ul>
-      <div class="plinks"><a href="https://github.com/oussama-abid/living-smarter">Code</a></div>
-    </article>
-
-    <article class="project">
-      <h3>CCAI: Cyber Crime based on AI</h3>
-      <p class="meta">
-        <span lang="en">Multi-agent research demonstrator · Master's team project · 2024–2025</span>
-        <span lang="de">Multi-Agenten-Forschungsdemonstrator · Masterprojekt im Team · 2024–2025</span>
-      </p>
-      <p>
-        <span lang="en">Developed as a team: a demonstrator that shows how LLM agents can generate targeted phishing scenarios from a company name, to raise awareness of the threat. I built the report-writer and database agents, the result dashboards, and the website-cloning integration.</span>
-        <span lang="de">Im Team entwickelt: ein Demonstrator, der zeigt, wie LLM-Agenten aus einem Firmennamen gezielte Phishing-Szenarien erzeugen, um für die Bedrohung zu sensibilisieren. Meine Teile: Report-Writer- und Datenbank-Agent, Ergebnis-Dashboards und die Website-Cloning-Integration.</span>
-      </p>
-      <ul class="tags" aria-label="Technologies">
-        <li>Next.js</li><li>TypeScript</li><li>Vercel AI SDK</li><li>Prisma</li><li>PostgreSQL</li>
-      </ul>
-    </article>
-
-    <article class="project">
-      <h3>Nearby Activity Finder</h3>
-      <p class="meta">
-        <span lang="en">Mobile app · Team project, Hochschule Bremen · 2025</span>
-        <span lang="de">Mobile App · Teamprojekt, Hochschule Bremen · 2025</span>
-      </p>
-      <p>
-        <span lang="en">Developed as a team: a Flutter app that suggests leisure activities by location, weather and group. I built the app interface: home screen with live weather, filters, navigation and the map with clustered markers.</span>
-        <span lang="de">Im Team entwickelt: eine Flutter-App, die Freizeitaktivitäten nach Standort, Wetter und Gruppe vorschlägt. Meine Teile: App-Oberfläche mit Startseite und Live-Wetter, Filter, Navigation und Karte mit Marker-Clustering.</span>
-      </p>
-      <ul class="tags" aria-label="Technologies">
-        <li>Flutter</li><li>Dart</li><li>Next.js</li><li>Supabase</li>
-      </ul>
-      <div class="plinks"><a href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder">Code</a></div>
-    </article>
-
-    <article class="project">
-      <h3>ShipFlow <span class="badge"><span lang="en">In progress</span><span lang="de">In Arbeit</span></span></h3>
-      <p class="meta">
-        <span lang="en">Event-driven logistics platform · Personal project</span>
-        <span lang="de">Ereignisgesteuerte Logistikplattform · Eigenes Projekt</span>
-      </p>
-      <p>
-        <span lang="en">Spring Boot microservices that react to shipment status changes through RabbitMQ, built for reliability: transactional outbox, idempotent consumers and a dead-letter queue, with a live Angular dashboard.</span>
-        <span lang="de">Spring-Boot-Microservices, die über RabbitMQ auf Statusänderungen von Sendungen reagieren, mit Fokus auf Zuverlässigkeit: Transactional Outbox, idempotente Consumer und Dead-Letter-Queue, dazu ein Live-Dashboard mit Angular.</span>
-      </p>
-      <ul class="tags" aria-label="Technologies">
-        <li>Java</li><li>Spring Boot</li><li>RabbitMQ</li><li>Angular</li><li>Testcontainers</li>
-      </ul>
-      <div class="plinks"><a href="https://github.com/oussama-abid/shipflow">Code</a></div>
-    </article>
-  </section>
-
-  <section id="experience">
-    <h2><span lang="en">Experience &amp; education</span><span lang="de">Erfahrung &amp; Ausbildung</span></h2>
-
-    <div class="row">
-      <div class="when"><span lang="en">since Apr 2024</span><span lang="de">seit 04/2024</span></div>
+    <div class="wrap">
       <div>
-        <h3><span lang="en">M.Sc. Computer Science</span><span lang="de">M.Sc. Informatik</span></h3>
-        <p class="where"><span lang="en">Hochschule Bremen · Profile: Complex Software Systems</span><span lang="de">Hochschule Bremen · Profil: Komplexe Softwaresysteme</span></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">11/2022 – 06/2023</div>
-      <div>
-        <h3><span lang="en">Freelance Full-Stack Developer</span><span lang="de">Freiberuflicher Full-Stack-Entwickler</span></h3>
-        <p class="where">Remote</p>
-        <p>
-          <span lang="en">Built a cross-border e-commerce and logistics platform with shipment tracking and automatic SMS and WhatsApp notifications, and a train management system with QR code capture (Laravel, Vue.js, MySQL).</span>
-          <span lang="de">Grenzüberschreitende E-Commerce- und Logistikplattform mit Sendungsverfolgung und automatischen SMS- und WhatsApp-Benachrichtigungen sowie ein Zugverwaltungssystem mit QR-Code-Erfassung (Laravel, Vue.js, MySQL).</span>
+        <p class="hello"><span lang="en">Hi, I'm Oussama, a software developer in Bremen.</span><span lang="de">Hallo, ich bin Oussama, Softwareentwickler in Bremen.</span></p>
+        <h1><span lang="en">I build software and ship it.</span><span lang="de">Ich baue Software und bringe sie live.</span></h1>
+        <p class="pitch">
+          <span lang="en">Computer Science Master's student at <strong>Hochschule Bremen</strong>. I take web applications from the database to automated deployment with <strong>Java, Spring Boot, Python, React and Angular</strong>, and add AI where it actually helps.</span>
+          <span lang="de">Informatik-Masterstudent an der <strong>Hochschule Bremen</strong>. Ich entwickle Webanwendungen von der Datenbank bis zum automatisierten Deployment mit <strong>Java, Spring Boot, Python, React und Angular</strong> und setze KI dort ein, wo sie wirklich hilft.</span>
         </p>
+        <div class="cta">
+          <a class="btn solid" href="#work"><span lang="en">See my work</span><span lang="de">Projekte ansehen</span></a>
+          <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+            <span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span>
+          </a>
+        </div>
+        <p class="status"><i aria-hidden="true"></i><span lang="en">Looking for a working student role, up to 20 h/week</span><span lang="de">Suche eine Werkstudentenstelle, bis 20 Std./Woche</span></p>
       </div>
-    </div>
-    <div class="row">
-      <div class="when">05/2023 – 08/2023</div>
-      <div>
-        <h3><span lang="en">German intensive course, telc C1 Hochschule</span><span lang="de">Deutsch-Intensivkurs, telc C1 Hochschule</span></h3>
-        <p class="where">F+U Academy of Languages, Heidelberg</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">02/2022 – 06/2022</div>
-      <div>
-        <h3><span lang="en">Software Development Intern</span><span lang="de">Praktikant Softwareentwicklung</span></h3>
-        <p class="where"><span lang="en">Intuitive Interactive, Tunisia</span><span lang="de">Intuitive Interactive, Tunesien</span></p>
-        <p>
-          <span lang="en">Web and mobile app for an online university library (Laravel, Vue.js, Flutter).</span>
-          <span lang="de">Web- und Mobilanwendung für eine Online-Universitätsbibliothek (Laravel, Vue.js, Flutter).</span>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">2020 – 2021</div>
-      <div>
-        <h3><span lang="en">Software Development Intern (two internships)</span><span lang="de">Praktikant Softwareentwicklung (zwei Praktika)</span></h3>
-        <p class="where"><span lang="en">Les Ciments de Bizerte, Tunisia</span><span lang="de">Les Ciments de Bizerte, Tunesien</span></p>
-        <p>
-          <span lang="en">Employee and leave management system (Laravel, Angular) and a company website.</span>
-          <span lang="de">Mitarbeiter- und Urlaubsverwaltung (Laravel, Angular) und eine Unternehmenswebsite.</span>
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="when">2019 – 2022</div>
-      <div>
-        <h3><span lang="en">Bachelor in Computer Technology</span><span lang="de">Bachelor in Computertechnologie</span></h3>
-        <p class="where"><span lang="en">ISET Bizerte, Tunisia</span><span lang="de">ISET Bizerte, Tunesien</span></p>
+
+      <div class="run" role="img" aria-label="A deployment run of StudyMind: lint, 110 tests, build and deploy all pass, and the app is live.">
+        <header><b></b><b></b><b></b><span>studymind · main</span></header>
+        <ol>
+          <li class="cmd">git push origin main</li>
+          <li><span class="ok">✓</span><span class="step">lint</span><span>ruff, eslint</span><span class="t">8s</span></li>
+          <li><span class="ok">✓</span><span class="step">test</span><span>110 passed</span><span class="t">41s</span></li>
+          <li><span class="ok">✓</span><span class="step">build</span><span>docker image</span><span class="t">1m 12s</span></li>
+          <li><span class="ok">✓</span><span class="step">deploy</span><span>azure, vercel</span><span class="t">24s</span></li>
+        </ol>
+        <div class="live">
+          <span lang="en">StudyMind is live at <a href="https://studymind-neon.vercel.app">studymind-neon.vercel.app</a></span>
+          <span lang="de">StudyMind ist live unter <a href="https://studymind-neon.vercel.app">studymind-neon.vercel.app</a></span>
+          <small lang="en">Every merge runs this pipeline.</small>
+          <small lang="de">Jeder Merge durchläuft diese Pipeline.</small>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="skills">
-    <h2><span lang="en">Skills</span><span lang="de">Kenntnisse</span></h2>
-    <dl class="skills">
-      <dt>Backend</dt><dd>Java, Spring Boot, Python, FastAPI, PHP, Laravel, REST APIs</dd>
-      <dt>Frontend</dt><dd>TypeScript, React, Next.js, Angular, Vue.js, Tailwind CSS</dd>
-      <dt><span lang="en">Data</span><span lang="de">Datenbanken</span></dt><dd>PostgreSQL, pgvector, MySQL, SQLite</dd>
-      <dt><span lang="en">AI</span><span lang="de">KI</span></dt><dd><span lang="en">LLM integration, RAG, multi-agent systems</span><span lang="de">LLM-Integration, RAG, Multi-Agenten-Systeme</span></dd>
-      <dt>DevOps</dt><dd>Docker, GitHub Actions (CI/CD), Microsoft Azure, Vercel, Linux</dd>
-      <dt>Testing</dt><dd>pytest, Testcontainers, Vitest</dd>
-      <dt><span lang="en">Languages</span><span lang="de">Sprachen</span></dt><dd><span lang="en">Arabic (native), French (C1), German (C1), English (good)</span><span lang="de">Arabisch (Muttersprache), Französisch (C1), Deutsch (C1), Englisch (gut)</span></dd>
-    </dl>
-  </section>
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="en">Selected work</span><span lang="de">Ausgewählte Projekte</span></h2>
+        <p><span lang="en">Each project is on GitHub with its history: tickets, branches, pull requests and tests.</span><span lang="de">Jedes Projekt liegt mit seiner Historie auf GitHub: Tickets, Branches, Pull Requests und Tests.</span></p>
+      </div>
 
-  <section id="contact" class="contact">
-    <h2><span lang="en">Contact</span><span lang="de">Kontakt</span></h2>
-    <p>
-      <span lang="en">I'm looking for a working student or part-time role in software development (up to 20 hours a week). I'd be glad to hear from you.</span>
-      <span lang="de">Ich suche eine Werkstudententätigkeit oder Teilzeitstelle in der Softwareentwicklung (bis 20 Std./Woche). Ich freue mich auf Ihre Nachricht.</span>
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a>
-      <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/">LinkedIn</a>
-      <a class="btn" href="https://github.com/oussama-abid">GitHub</a>
+      <article class="feature">
+        <div class="shot">
+          <img src="studymind.jpg" width="1600" height="684" alt="StudyMind answering a question about a Docker lecture, with the cited PDF page open next to the answer">
+        </div>
+        <div class="text">
+          <span class="pill"><i></i>Live</span>
+          <h3>StudyMind</h3>
+          <p class="kind"><span lang="en">AI study assistant, personal project, 2026</span><span lang="de">KI-Lernassistent, eigenes Projekt, 2026</span></p>
+          <p class="desc">
+            <span lang="en">Students upload their lecture PDFs and ask questions. The answers come only from their own documents and cite the pages; one click opens the PDF at that page.</span>
+            <span lang="de">Studierende laden ihre Vorlesungs-PDFs hoch und stellen Fragen. Die Antworten stammen nur aus den eigenen Unterlagen und nennen die Seiten; ein Klick öffnet das PDF an dieser Stelle.</span>
+          </p>
+          <div class="nums">
+            <div><b>0.6 s</b><span lang="en">answer time, down from 40 s+</span><span lang="de">Antwortzeit, vorher über 40 s</span></div>
+            <div><b>110</b><span lang="en">tests on every merge</span><span lang="de">Tests bei jedem Merge</span></div>
+            <div><b>2</b><span lang="en">clouds, deployed automatically</span><span lang="de">Clouds, automatisch ausgerollt</span></div>
+          </div>
+          <p class="stack"><strong>Stack:</strong> Python, FastAPI, React, TypeScript, PostgreSQL + pgvector, Docker, GitHub Actions, Azure, Vercel</p>
+          <div class="links">
+            <a class="btn solid" href="https://studymind-neon.vercel.app"><span lang="en">Open the app</span><span lang="de">App öffnen</span></a>
+            <a class="btn" href="https://github.com/oussama-abid/studymind"><span lang="en">View code</span><span lang="de">Code ansehen</span></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid">
+        <article class="proj">
+          <h3>Living Smarter</h3>
+          <p class="kind"><span lang="en">LLM voice assistant for smart homes, research project, 2025</span><span lang="de">LLM-Sprachassistent für Smart Homes, Forschungsprojekt, 2025</span></p>
+          <p>
+            <span lang="en">The prototype behind a research paper at Hochschule Bremen. A Gemini-based orchestrator splits spoken commands into tasks and runs them: smart home devices, web search, YouTube, Gmail.</span>
+            <span lang="de">Der Prototyp zu einer wissenschaftlichen Arbeit an der Hochschule Bremen. Ein Orchestrator auf Gemini-Basis zerlegt gesprochene Befehle in Aufgaben und führt sie aus: Smart-Home-Geräte, Websuche, YouTube, Gmail.</span>
+          </p>
+          <div class="nums">
+            <div><b>100 %</b><span lang="en">intents recognised</span><span lang="de">Intentionen erkannt</span></div>
+            <div><b>72 %</b><span lang="en">tasks completed</span><span lang="de">Aufgaben erfüllt</span></div>
+            <div><b>36</b><span lang="en">test cases</span><span lang="de">Testfälle</span></div>
+          </div>
+          <p class="stack"><strong>Stack:</strong> Python, Google Gemini, SQLite, pytest, Docker</p>
+          <div class="links"><a class="btn" href="https://github.com/oussama-abid/living-smarter"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+        </article>
+
+        <article class="proj">
+          <h3>CCAI</h3>
+          <p class="kind"><span lang="en">Multi-agent research demonstrator, Master's team project, 2024–2025</span><span lang="de">Multi-Agenten-Demonstrator, Masterprojekt im Team, 2024–2025</span></p>
+          <p>
+            <span lang="en">Shows how LLM agents can generate targeted phishing scenarios from nothing but a company name, to make the threat tangible for awareness training.</span>
+            <span lang="de">Zeigt, wie LLM-Agenten allein aus einem Firmennamen gezielte Phishing-Szenarien erzeugen können, um die Bedrohung für Awareness-Schulungen greifbar zu machen.</span>
+          </p>
+          <p class="mine">
+            <span lang="en">My part: the report-writer and database agents, the result dashboards and the website-cloning integration.</span>
+            <span lang="de">Mein Teil: Report-Writer- und Datenbank-Agent, die Ergebnis-Dashboards und die Website-Cloning-Integration.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Next.js, TypeScript, Vercel AI SDK, Prisma, PostgreSQL</p>
+        </article>
+
+        <article class="proj">
+          <h3>Nearby Activity Finder</h3>
+          <p class="kind"><span lang="en">Mobile app, team project, 2025</span><span lang="de">Mobile App, Teamprojekt, 2025</span></p>
+          <p>
+            <span lang="en">A Flutter app that suggests things to do based on where you are, the weather and who you're with.</span>
+            <span lang="de">Eine Flutter-App, die Freizeitaktivitäten nach Standort, Wetter und Gruppe vorschlägt.</span>
+          </p>
+          <p class="mine">
+            <span lang="en">My part: the app interface, with a live-weather home screen, filters, navigation and a map with clustered markers.</span>
+            <span lang="de">Mein Teil: die App-Oberfläche mit Live-Wetter auf der Startseite, Filtern, Navigation und einer Karte mit Marker-Clustering.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Flutter, Dart, Next.js, Supabase</p>
+          <div class="links"><a class="btn" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+        </article>
+
+        <article class="proj">
+          <h3><span lang="en">Freelance logistics platform</span><span lang="de">Logistikplattform (freiberuflich)</span></h3>
+          <p class="kind"><span lang="en">Client project, 2022–2023</span><span lang="de">Kundenprojekt, 2022–2023</span></p>
+          <p>
+            <span lang="en">A cross-border e-commerce and shipping platform. Customers track their parcels, and every status change triggers an SMS or WhatsApp message automatically.</span>
+            <span lang="de">Eine grenzüberschreitende E-Commerce- und Versandplattform. Kunden verfolgen ihre Pakete, und jede Statusänderung löst automatisch eine SMS oder WhatsApp-Nachricht aus.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Laravel, Vue.js, MySQL</p>
+        </article>
+
+        <article class="proj wide">
+          <div>
+            <span class="pill wip"><i></i><span lang="en">In progress</span><span lang="de">In Arbeit</span></span>
+            <h3>ShipFlow</h3>
+            <p class="kind"><span lang="en">Event-driven logistics backend, personal project</span><span lang="de">Ereignisgesteuertes Logistik-Backend, eigenes Projekt</span></p>
+            <p>
+              <span lang="en">Spring Boot microservices that talk through RabbitMQ and are built not to lose or double-process a single event, with a live Angular dashboard on top.</span>
+              <span lang="de">Spring-Boot-Microservices, die über RabbitMQ kommunizieren und so gebaut sind, dass kein Ereignis verloren geht oder doppelt verarbeitet wird, dazu ein Live-Dashboard mit Angular.</span>
+            </p>
+            <p class="stack"><strong>Stack:</strong> Java, Spring Boot, RabbitMQ, PostgreSQL, Angular, Testcontainers</p>
+            <div class="links"><a class="btn" href="https://github.com/oussama-abid/shipflow"><span lang="en">Follow on GitHub</span><span lang="de">Auf GitHub verfolgen</span></a></div>
+          </div>
+          <ol class="flow" aria-label="How an event moves through ShipFlow">
+            <li><b>1</b><span lang="en">A shipment changes status and the change is saved together with an outbox event</span><span lang="de">Eine Sendung ändert ihren Status, die Änderung wird zusammen mit einem Outbox-Event gespeichert</span></li>
+            <li><b>2</b><span lang="en">The event is published to RabbitMQ</span><span lang="de">Das Event wird an RabbitMQ veröffentlicht</span></li>
+            <li><b>3</b><span lang="en">Consumers handle it once, even if it arrives twice</span><span lang="de">Consumer verarbeiten es genau einmal, auch wenn es doppelt ankommt</span></li>
+            <li><b>4</b><span lang="en">Failures land in a dead-letter queue, and the dashboard updates live</span><span lang="de">Fehler landen in einer Dead-Letter-Queue, das Dashboard aktualisiert sich live</span></li>
+          </ol>
+        </article>
+      </div>
     </div>
   </section>
 
+  <section class="block" id="path">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="en">Experience</span><span lang="de">Werdegang</span></h2>
+        <p><span lang="en">From Tunisia to Bremen: internships and freelance work first, now a Master's in complex software systems.</span><span lang="de">Von Tunesien nach Bremen: zuerst Praktika und freiberufliche Projekte, jetzt ein Master in komplexen Softwaresystemen.</span></p>
+      </div>
+      <ol class="timeline">
+        <li class="now">
+          <time><span lang="en">Apr 2024 – today</span><span lang="de">04/2024 – heute</span></time>
+          <div class="body">
+            <h3><span lang="en">M.Sc. Computer Science</span><span lang="de">M.Sc. Informatik</span></h3>
+            <p class="org"><span lang="en">Hochschule Bremen, profile Complex Software Systems</span><span lang="de">Hochschule Bremen, Profil Komplexe Softwaresysteme</span></p>
+            <p><span lang="en">Team projects in multi-agent AI and mobile development, and a research paper on LLM voice assistants. Expected to finish in 2027.</span><span lang="de">Teamprojekte zu Multi-Agenten-KI und mobiler Entwicklung sowie eine wissenschaftliche Arbeit zu LLM-Sprachassistenten. Abschluss voraussichtlich 2027.</span></p>
+          </div>
+        </li>
+        <li>
+          <time>05 – 08/2023</time>
+          <div class="body">
+            <h3><span lang="en">German intensive course, telc C1 Hochschule</span><span lang="de">Deutsch-Intensivkurs, telc C1 Hochschule</span></h3>
+            <p class="org">F+U Academy of Languages, Heidelberg</p>
+          </div>
+        </li>
+        <li>
+          <time>11/2022 – 06/2023</time>
+          <div class="body">
+            <h3><span lang="en">Freelance full-stack developer</span><span lang="de">Freiberuflicher Full-Stack-Entwickler</span></h3>
+            <p class="org">Remote</p>
+            <p><span lang="en">Logistics and e-commerce platform with tracking and automatic notifications; a train management system with QR code capture.</span><span lang="de">Logistik- und E-Commerce-Plattform mit Sendungsverfolgung und automatischen Benachrichtigungen; ein Zugverwaltungssystem mit QR-Code-Erfassung.</span></p>
+          </div>
+        </li>
+        <li>
+          <time>02 – 06/2022</time>
+          <div class="body">
+            <h3><span lang="en">Software development intern</span><span lang="de">Praktikant Softwareentwicklung</span></h3>
+            <p class="org"><span lang="en">Intuitive Interactive, Tunisia</span><span lang="de">Intuitive Interactive, Tunesien</span></p>
+            <p><span lang="en">Web and mobile app for an online university library with Laravel, Vue.js and Flutter.</span><span lang="de">Web- und Mobilanwendung für eine Online-Universitätsbibliothek mit Laravel, Vue.js und Flutter.</span></p>
+          </div>
+        </li>
+        <li>
+          <time>2019 – 2022</time>
+          <div class="body">
+            <h3><span lang="en">Bachelor in Computer Technology</span><span lang="de">Bachelor in Computertechnologie</span></h3>
+            <p class="org"><span lang="en">ISET Bizerte, Tunisia</span><span lang="de">ISET Bizerte, Tunesien</span></p>
+            <p><span lang="en">Including two internships at Les Ciments de Bizerte: an employee and leave management system with Laravel and Angular, and the company website.</span><span lang="de">Mit zwei Praktika bei Les Ciments de Bizerte: eine Mitarbeiter- und Urlaubsverwaltung mit Laravel und Angular sowie die Unternehmenswebsite.</span></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="head">
+        <h2><span lang="en">What I work with</span><span lang="de">Womit ich arbeite</span></h2>
+        <p><span lang="en">The tools I've used in real projects, not just tutorials.</span><span lang="de">Werkzeuge, die ich in echten Projekten eingesetzt habe, nicht nur in Tutorials.</span></p>
+      </div>
+      <div class="skills">
+        <div><h3>Backend</h3><p>Java, Spring Boot, Python, FastAPI, PHP, Laravel, REST APIs, RabbitMQ</p></div>
+        <div><h3>Frontend</h3><p>TypeScript, React, Angular, Next.js, Vue.js, Flutter, Tailwind CSS</p></div>
+        <div><h3><span lang="en">Data</span><span lang="de">Daten</span></h3><p>PostgreSQL, pgvector, MySQL, SQLite, Supabase</p></div>
+        <div><h3><span lang="en">AI</span><span lang="de">KI</span></h3><p><span lang="en">LLM integration, retrieval-augmented generation, multi-agent systems, Gemini, Groq</span><span lang="de">LLM-Integration, Retrieval-Augmented Generation, Multi-Agenten-Systeme, Gemini, Groq</span></p></div>
+        <div><h3><span lang="en">Delivery</span><span lang="de">Auslieferung</span></h3><p>Docker, GitHub Actions, Azure, Vercel, Linux, pytest, Vitest, Testcontainers</p></div>
+        <div><h3><span lang="en">Languages</span><span lang="de">Sprachen</span></h3><p><span lang="en">Arabic (native), German C1, French C1, English</span><span lang="de">Arabisch (Muttersprache), Deutsch C1, Französisch C1, Englisch</span></p></div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="wrap">© 2026 Oussama Ben Abid · Bremen</footer>
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2><span lang="en">Looking for a working student?</span><span lang="de">Sie suchen einen Werkstudenten?</span></h2>
+    <p><span lang="en">I'm available for up to 20 hours a week, in Bremen or remote. I'd be glad to hear from you.</span><span lang="de">Ich bin bis zu 20 Stunden pro Woche verfügbar, in Bremen oder remote. Ich freue mich auf Ihre Nachricht.</span></p>
+    <a class="mail" href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a>
+    <div class="cta">
+      <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/">LinkedIn</a>
+      <a class="btn" href="https://github.com/oussama-abid">GitHub</a>
+      <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" download><span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span></a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap"><span>© 2026 Oussama Ben Abid</span><span>Bremen</span></div>
+</footer>
 
 <script>
   (function () {
     var root = document.documentElement;
+    root.classList.add("js");
     function apply(lang) {
       root.setAttribute("data-lang", lang);
       root.setAttribute("lang", lang);
       document.querySelectorAll("[data-set-lang]").forEach(function (b) {
         b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
       });
-      document.title = lang === "de"
-        ? "Oussama Ben Abid · Softwareentwickler"
-        : "Oussama Ben Abid · Software Developer";
+      document.title = lang === "de" ? "Oussama Ben Abid · Softwareentwickler" : "Oussama Ben Abid · Software Developer";
     }
     var saved = null;
     try { saved = localStorage.getItem("lang"); } catch (e) {}
