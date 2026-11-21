@@ -182,6 +182,45 @@
   footer { background: var(--ink); color: #7F8FB0; font-size: 14px; padding: 0 0 40px; }
   footer .wrap { border-top: 1px solid #2A3B5E; padding-top: 24px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
+  [data-detail] { cursor: pointer; }
+  [data-detail]:hover { border-color: #B9C4D8; }
+  .proj.wide[data-detail]:hover { border-color: var(--ink); }
+  .btn.more { cursor: pointer; }
+  .proj:not(.wide) .btn.more, .feature .btn.more { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+  .proj:not(.wide) .btn.more:hover, .feature .btn.more:hover { background: #1B3AB8; }
+  .proj.wide .btn.more { background: #fff; color: var(--ink); border-color: #fff; }
+  dialog.detail {
+    width: min(760px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); padding: 0; border: 0;
+    border-radius: 22px; background: var(--paper); color: var(--ink);
+    box-shadow: 0 40px 80px -30px rgba(19,33,58,.6);
+  }
+  dialog.detail::backdrop { background: rgba(19,33,58,.55); backdrop-filter: blur(3px); }
+  dialog.detail[open] { animation: pop .22s ease-out; }
+  @keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+  @media (prefers-reduced-motion: reduce) { dialog.detail[open] { animation: none; } }
+  .detail .dh { position: sticky; top: 0; z-index: 1; background: var(--paper); display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 28px 32px 18px; border-bottom: 1px solid var(--rule); }
+  .detail .dh h3 { font: 800 32px/1.05 var(--display); letter-spacing: -.025em; margin: 0 0 6px; }
+  .detail .dh p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  .detail .x { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule); background: var(--page); color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; }
+  .detail .x:hover { border-color: var(--ink); }
+  .detail .db { padding: 8px 32px 32px; }
+  .detail h4 { font: 700 19px/1.25 var(--display); margin: 26px 0 8px; }
+  .detail p { margin: 0 0 10px; }
+  .detail ul { margin: 0 0 10px; padding-left: 20px; }
+  .detail li { margin-bottom: 6px; }
+  .detail ol.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .detail ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; background: var(--page); border-radius: 12px; padding: 11px 14px; margin: 0; }
+  .detail ol.steps li::before { content: counter(s); font: 700 15px/1.6 var(--display); color: var(--cobalt); }
+  .detail .shotd { border-radius: 12px; border: 1px solid var(--rule); margin: 18px 0 4px; }
+  .detail .dlinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .detail .stack { margin-top: 18px; }
+  @media (max-width: 680px) {
+    dialog.detail { width: 100vw; max-width: 100vw; max-height: 100dvh; height: 100dvh; border-radius: 0; margin: 0; }
+    .detail .dh { padding: 20px 18px 14px; }
+    .detail .dh h3 { font-size: 26px; }
+    .detail .db { padding: 4px 18px 28px; }
+  }
+
   @media (max-width: 960px) {
     .hero .wrap, .feature, .head, .proj.wide { grid-template-columns: 1fr; }
     .hero { padding: 56px 0 72px; }
@@ -241,7 +280,7 @@
         </p>
         <div class="cta">
           <a class="btn solid" href="#work"><span lang="en">See my work</span><span lang="de">Projekte ansehen</span></a>
-          <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" download>
+          <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
             <span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span>
           </a>
@@ -259,8 +298,8 @@
           <li><span class="ok">✓</span><span class="step">deploy</span><span>azure, vercel</span><span class="t">24s</span></li>
         </ol>
         <div class="live">
-          <span lang="en">StudyMind is live at <a href="https://studymind-neon.vercel.app">studymind-neon.vercel.app</a></span>
-          <span lang="de">StudyMind ist live unter <a href="https://studymind-neon.vercel.app">studymind-neon.vercel.app</a></span>
+          <span lang="en">StudyMind is live at <a href="https://studymind-neon.vercel.app" target="_blank" rel="noopener">studymind-neon.vercel.app</a></span>
+          <span lang="de">StudyMind ist live unter <a href="https://studymind-neon.vercel.app" target="_blank" rel="noopener">studymind-neon.vercel.app</a></span>
           <small lang="en">Every merge runs this pipeline.</small>
           <small lang="de">Jeder Merge durchläuft diese Pipeline.</small>
         </div>
@@ -275,7 +314,7 @@
         <p><span lang="en">Each project is on GitHub with its history: tickets, branches, pull requests and tests.</span><span lang="de">Jedes Projekt liegt mit seiner Historie auf GitHub: Tickets, Branches, Pull Requests und Tests.</span></p>
       </div>
 
-      <article class="feature">
+      <article class="feature" data-detail="d-studymind">
         <div class="shot">
           <img src="studymind.jpg" width="1600" height="684" alt="StudyMind answering a question about a Docker lecture, with the cited PDF page open next to the answer">
         </div>
@@ -294,14 +333,15 @@
           </div>
           <p class="stack"><strong>Stack:</strong> Python, FastAPI, React, TypeScript, PostgreSQL + pgvector, Docker, GitHub Actions, Azure, Vercel</p>
           <div class="links">
-            <a class="btn solid" href="https://studymind-neon.vercel.app"><span lang="en">Open the app</span><span lang="de">App öffnen</span></a>
-            <a class="btn" href="https://github.com/oussama-abid/studymind"><span lang="en">View code</span><span lang="de">Code ansehen</span></a>
+            <button class="btn more" type="button" data-open="d-studymind"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button>
+            <a class="btn" href="https://studymind-neon.vercel.app" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="de">App öffnen</span></a>
+            <a class="btn" href="https://github.com/oussama-abid/studymind" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a>
           </div>
         </div>
       </article>
 
       <div class="grid">
-        <article class="proj">
+        <article class="proj" data-detail="d-living">
           <h3>Living Smarter</h3>
           <p class="kind"><span lang="en">LLM voice assistant for smart homes, research project, 2025</span><span lang="de">LLM-Sprachassistent für Smart Homes, Forschungsprojekt, 2025</span></p>
           <p>
@@ -314,10 +354,10 @@
             <div><b>36</b><span lang="en">test cases</span><span lang="de">Testfälle</span></div>
           </div>
           <p class="stack"><strong>Stack:</strong> Python, Google Gemini, SQLite, pytest, Docker</p>
-          <div class="links"><a class="btn" href="https://github.com/oussama-abid/living-smarter"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+          <div class="links"><button class="btn more" type="button" data-open="d-living"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/living-smarter" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
         </article>
 
-        <article class="proj">
+        <article class="proj" data-detail="d-ccai">
           <h3>CCAI</h3>
           <p class="kind"><span lang="en">Multi-agent research demonstrator, Master's team project, 2024–2025</span><span lang="de">Multi-Agenten-Demonstrator, Masterprojekt im Team, 2024–2025</span></p>
           <p>
@@ -329,9 +369,10 @@
             <span lang="de">Mein Teil: Report-Writer- und Datenbank-Agent, die Ergebnis-Dashboards und die Website-Cloning-Integration.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Next.js, TypeScript, Vercel AI SDK, Prisma, PostgreSQL</p>
+          <div class="links"><button class="btn more" type="button" data-open="d-ccai"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button></div>
         </article>
 
-        <article class="proj">
+        <article class="proj" data-detail="d-nearby">
           <h3>Nearby Activity Finder</h3>
           <p class="kind"><span lang="en">Mobile app, team project, 2025</span><span lang="de">Mobile App, Teamprojekt, 2025</span></p>
           <p>
@@ -343,10 +384,10 @@
             <span lang="de">Mein Teil: die App-Oberfläche mit Live-Wetter auf der Startseite, Filtern, Navigation und einer Karte mit Marker-Clustering.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Flutter, Dart, Next.js, Supabase</p>
-          <div class="links"><a class="btn" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+          <div class="links"><button class="btn more" type="button" data-open="d-nearby"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
         </article>
 
-        <article class="proj">
+        <article class="proj" data-detail="d-freelance">
           <h3><span lang="en">Freelance logistics platform</span><span lang="de">Logistikplattform (freiberuflich)</span></h3>
           <p class="kind"><span lang="en">Client project, 2022–2023</span><span lang="de">Kundenprojekt, 2022–2023</span></p>
           <p>
@@ -354,9 +395,10 @@
             <span lang="de">Eine grenzüberschreitende E-Commerce- und Versandplattform. Kunden verfolgen ihre Pakete, und jede Statusänderung löst automatisch eine SMS oder WhatsApp-Nachricht aus.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Laravel, Vue.js, MySQL</p>
+          <div class="links"><button class="btn more" type="button" data-open="d-freelance"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button></div>
         </article>
 
-        <article class="proj wide">
+        <article class="proj wide" data-detail="d-shipflow">
           <div>
             <span class="pill wip"><i></i><span lang="en">In progress</span><span lang="de">In Arbeit</span></span>
             <h3>ShipFlow</h3>
@@ -366,7 +408,7 @@
               <span lang="de">Spring-Boot-Microservices, die über RabbitMQ kommunizieren und so gebaut sind, dass kein Ereignis verloren geht oder doppelt verarbeitet wird, dazu ein Live-Dashboard mit Angular.</span>
             </p>
             <p class="stack"><strong>Stack:</strong> Java, Spring Boot, RabbitMQ, PostgreSQL, Angular, Testcontainers</p>
-            <div class="links"><a class="btn" href="https://github.com/oussama-abid/shipflow"><span lang="en">Follow on GitHub</span><span lang="de">Auf GitHub verfolgen</span></a></div>
+            <div class="links"><button class="btn more" type="button" data-open="d-shipflow"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/shipflow" target="_blank" rel="noopener"><span lang="en">Follow on GitHub</span><span lang="de">Auf GitHub verfolgen</span></a></div>
           </div>
           <ol class="flow" aria-label="How an event moves through ShipFlow">
             <li><b>1</b><span lang="en">A shipment changes status and the change is saved together with an outbox event</span><span lang="de">Eine Sendung ändert ihren Status, die Änderung wird zusammen mit einem Outbox-Event gespeichert</span></li>
@@ -454,15 +496,161 @@
     <div class="me"><img src="oussama.jpg" width="480" height="480" alt="" loading="lazy"><span><b>Oussama Ben Abid</b><span lang="en">Software developer, Bremen</span><span lang="de">Softwareentwickler, Bremen</span></span></div>
     <a class="mail" href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a>
     <div class="cta">
-      <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/">LinkedIn</a>
-      <a class="btn" href="https://github.com/oussama-abid">GitHub</a>
-      <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" download><span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/oussama-abid" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" target="_blank" rel="noopener"><span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span></a>
     </div>
   </div>
 </section>
 <footer>
   <div class="wrap"><span>© 2026 Oussama Ben Abid</span><span>Bremen</span></div>
 </footer>
+
+<dialog class="detail" id="d-studymind" aria-labelledby="d-studymind-t">
+  <div class="dh">
+    <div><h3 id="d-studymind-t">StudyMind</h3><p><span lang="en">AI study assistant, personal project, 2026</span><span lang="de">KI-Lernassistent, eigenes Projekt, 2026</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <img class="shotd" src="studymind.jpg" width="1600" height="684" loading="lazy" alt="StudyMind answer with the cited PDF page opened next to it">
+    <h4 lang="en">The problem</h4>
+    <h4 lang="de">Das Problem</h4>
+    <p lang="en">Before an exam, students spend a lot of time searching through hundreds of lecture slides. General chatbots answer quickly, but they don't know the course material and sometimes invent things.</p>
+    <p lang="de">Vor einer Prüfung suchen Studierende lange in Hunderten von Vorlesungsfolien. Allgemeine Chatbots antworten schnell, kennen aber den Kursstoff nicht und erfinden manchmal Dinge.</p>
+    <h4 lang="en">What it does</h4>
+    <h4 lang="de">Was es kann</h4>
+    <ul lang="en"><li>Create a course and upload its lecture PDFs</li><li>Ask questions in plain language and get answers only from your own material</li><li>Every answer cites the document and page it is based on</li><li>Click a citation and the PDF opens at exactly that page, next to the answer</li></ul>
+    <ul lang="de"><li>Kurs anlegen und die Vorlesungs-PDFs hochladen</li><li>Fragen in normaler Sprache stellen und Antworten nur aus den eigenen Unterlagen erhalten</li><li>Jede Antwort nennt Dokument und Seite, auf denen sie beruht</li><li>Ein Klick auf eine Quelle öffnet das PDF genau an dieser Seite neben der Antwort</li></ul>
+    <h4 lang="en">How it works</h4>
+    <h4 lang="de">So funktioniert es</h4>
+    <ol class="steps" lang="en"><li><span>An uploaded PDF is read page by page and split into small text chunks</span></li><li><span>Each chunk is turned into a vector with Gemini embeddings and stored in PostgreSQL with pgvector</span></li><li><span>A question is turned into a vector too, and the most similar chunks are found</span></li><li><span>A language model on Groq writes the answer from those chunks only and returns it in a fixed JSON format with the page sources</span></li></ol>
+    <ol class="steps" lang="de"><li><span>Ein hochgeladenes PDF wird Seite für Seite gelesen und in kleine Textabschnitte zerlegt</span></li><li><span>Jeder Abschnitt wird mit Gemini-Embeddings in einen Vektor umgewandelt und in PostgreSQL mit pgvector gespeichert</span></li><li><span>Die Frage wird ebenfalls zum Vektor, und die ähnlichsten Abschnitte werden gesucht</span></li><li><span>Ein Sprachmodell über Groq schreibt die Antwort nur aus diesen Abschnitten und liefert sie in einem festen JSON-Format mit den Seitenquellen</span></li></ol>
+    <h4 lang="en">The hardest part</h4>
+    <h4 lang="de">Die größte Herausforderung</h4>
+    <p lang="en">The first version generated answers with Gemini, and in production requests regularly took over 40 seconds or timed out. I measured several models on the same questions and moved answer generation to Groq. Answers now arrive in about 0.6 seconds, and I recorded the decision in an architecture decision record.</p>
+    <p lang="de">In der ersten Version erzeugte Gemini die Antworten, und im Betrieb dauerten Anfragen regelmäßig über 40 Sekunden oder brachen ab. Ich habe mehrere Modelle mit denselben Fragen gemessen und die Antwortgenerierung zu Groq verlegt. Antworten kommen jetzt in etwa 0,6 Sekunden; die Entscheidung habe ich in einem Architecture Decision Record festgehalten.</p>
+    <h4 lang="en">How it was built</h4>
+    <h4 lang="de">Wie es entstanden ist</h4>
+    <ul lang="en"><li>Planned in five sprints with GitHub issues, milestones and a project board</li><li>Every change on its own branch with a pull request</li><li>110 automated tests for backend and frontend</li><li>GitHub Actions runs lint and tests, builds Docker images and deploys the backend to an Azure VM over SSH; the frontend is deployed on Vercel</li></ul>
+    <ul lang="de"><li>In fünf Sprints mit GitHub Issues, Meilensteinen und Projektboard geplant</li><li>Jede Änderung auf einem eigenen Branch mit Pull Request</li><li>110 automatisierte Tests für Backend und Frontend</li><li>GitHub Actions prüft Lint und Tests, baut Docker-Images und rollt das Backend per SSH auf eine Azure-VM aus; das Frontend läuft auf Vercel</li></ul>
+    <p class="stack"><strong>Stack:</strong> Python, FastAPI, React, TypeScript, PostgreSQL + pgvector, Gemini embeddings, Groq, Docker, GitHub Actions, Azure, Vercel</p><div class="dlinks"><a class="btn solid" href="https://studymind-neon.vercel.app" target="_blank" rel="noopener"><span lang="en">Open the app</span><span lang="de">App öffnen</span></a><a class="btn" href="https://github.com/oussama-abid/studymind" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+  </div>
+</dialog>
+<dialog class="detail" id="d-living" aria-labelledby="d-living-t">
+  <div class="dh">
+    <div><h3 id="d-living-t">Living Smarter</h3><p><span lang="en">LLM voice assistant for smart homes, research project, Hochschule Bremen, 2025</span><span lang="de">LLM-Sprachassistent für Smart Homes, Forschungsprojekt, Hochschule Bremen, 2025</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <h4 lang="en">The idea</h4>
+    <h4 lang="de">Die Idee</h4>
+    <p lang="en">Classic voice assistants only understand fixed commands. We wanted to know how well a large language model can understand natural, multi-step requests like "turn off the lights in the living room and tell me tomorrow's weather", and carry them out.</p>
+    <p lang="de">Klassische Sprachassistenten verstehen nur feste Befehle. Wir wollten wissen, wie gut ein großes Sprachmodell natürliche, mehrstufige Anfragen wie „Mach das Licht im Wohnzimmer aus und sag mir das Wetter für morgen“ versteht und ausführt.</p>
+    <h4 lang="en">How it works</h4>
+    <h4 lang="de">So funktioniert es</h4>
+    <ol class="steps" lang="en"><li><span>Speech is converted to text</span></li><li><span>An orchestrator built on Google Gemini detects the intent and splits the request into tasks</span></li><li><span>Each task goes to a tool: the simulated smart home in SQLite, web search, YouTube or Gmail</span></li><li><span>The result is spoken back to the user</span></li></ol>
+    <ol class="steps" lang="de"><li><span>Sprache wird in Text umgewandelt</span></li><li><span>Ein Orchestrator auf Basis von Google Gemini erkennt die Absicht und zerlegt die Anfrage in Teilaufgaben</span></li><li><span>Jede Aufgabe geht an ein Tool: das simulierte Smart Home in SQLite, Websuche, YouTube oder Gmail</span></li><li><span>Das Ergebnis wird dem Nutzer vorgelesen</span></li></ol>
+    <h4 lang="en">Results</h4>
+    <h4 lang="de">Ergebnisse</h4>
+    <p lang="en">In the 36 test cases from the paper, the assistant recognised 100 % of intents and completed 72 % of tasks successfully.</p>
+    <p lang="de">In den 36 Testfällen der Arbeit erkannte der Assistent 100 % der Intentionen und erledigte 72 % der Aufgaben erfolgreich.</p>
+    <h4 lang="en">Making the code reproducible</h4>
+    <h4 lang="de">Den Code reproduzierbar machen</h4>
+    <ul lang="en"><li>Unit tests with a fake language model, so the logic can be tested without API calls; they uncovered two bugs in the device control, which I fixed</li><li>An evaluation script that reruns all 36 cases and records results without sending real emails or changing data</li><li>Docker image and a GitHub Actions pipeline for lint and tests</li></ul>
+    <ul lang="de"><li>Unit-Tests mit einem Fake-Sprachmodell, damit die Logik ohne API-Aufrufe testbar ist; sie deckten zwei Fehler in der Gerätesteuerung auf, die ich behoben habe</li><li>Ein Evaluationsskript, das alle 36 Fälle erneut ausführt, ohne echte E-Mails zu senden oder Daten zu verändern</li><li>Docker-Image und eine GitHub-Actions-Pipeline für Lint und Tests</li></ul>
+    <p class="stack"><strong>Stack:</strong> Python, Google Gemini, SQLite, speech recognition and text-to-speech, pytest, Ruff, Docker, GitHub Actions</p><div class="dlinks"><a class="btn solid" href="https://github.com/oussama-abid/living-smarter" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+  </div>
+</dialog>
+<dialog class="detail" id="d-ccai" aria-labelledby="d-ccai-t">
+  <div class="dh">
+    <div><h3 id="d-ccai-t">CCAI: Cyber Crime based on AI</h3><p><span lang="en">Multi-agent research demonstrator, Master's team project, 2024–2025</span><span lang="de">Multi-Agenten-Forschungsdemonstrator, Masterprojekt im Team, 2024–2025</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <h4 lang="en">The idea</h4>
+    <h4 lang="de">Die Idee</h4>
+    <p lang="en">Phishing gets far more convincing when attackers use AI. CCAI demonstrates this risk for awareness training: starting from just a company name, a team of AI agents gathers public information and produces a realistic, targeted phishing scenario together with a report.</p>
+    <p lang="de">Phishing wird viel überzeugender, wenn Angreifer KI nutzen. CCAI zeigt dieses Risiko für Awareness-Schulungen: Ausgehend von einem Firmennamen sammelt ein Team aus KI-Agenten öffentliche Informationen und erstellt ein realistisches, gezieltes Phishing-Szenario samt Bericht.</p>
+    <h4 lang="en">How it works</h4>
+    <h4 lang="de">So funktioniert es</h4>
+    <ol class="steps" lang="en"><li><span>The user enters a company name</span></li><li><span>Research agents collect publicly available information about the company</span></li><li><span>Further agents derive possible attack scenarios from it</span></li><li><span>The report-writer agent summarises everything in a structured report, and the results are saved and shown in dashboards</span></li></ol>
+    <ol class="steps" lang="de"><li><span>Der Nutzer gibt einen Firmennamen ein</span></li><li><span>Recherche-Agenten sammeln öffentlich verfügbare Informationen über das Unternehmen</span></li><li><span>Weitere Agenten leiten daraus mögliche Angriffsszenarien ab</span></li><li><span>Der Report-Writer-Agent fasst alles in einem strukturierten Bericht zusammen; die Ergebnisse werden gespeichert und in Dashboards angezeigt</span></li></ol>
+    <h4 lang="en">My contribution</h4>
+    <h4 lang="de">Mein Beitrag</h4>
+    <ul lang="en"><li>The report-writer agent that turns the agents' findings into a structured report</li><li>The database agent and data model for storing runs and results (Prisma, PostgreSQL)</li><li>The dashboards that present the results</li><li>Integrating the website-cloning step into the agent pipeline</li></ul>
+    <ul lang="de"><li>Den Report-Writer-Agenten, der die Ergebnisse der Agenten zu einem strukturierten Bericht macht</li><li>Den Datenbank-Agenten und das Datenmodell zum Speichern von Durchläufen und Ergebnissen (Prisma, PostgreSQL)</li><li>Die Dashboards zur Darstellung der Ergebnisse</li><li>Die Integration des Website-Cloning-Schritts in die Agenten-Pipeline</li></ul>
+    <p lang="en">The code belongs to the university project and isn't public.</p>
+    <p lang="de">Der Code gehört zum Hochschulprojekt und ist nicht öffentlich.</p>
+    <p class="stack"><strong>Stack:</strong> Next.js, TypeScript, Vercel AI SDK, Prisma, PostgreSQL</p>
+  </div>
+</dialog>
+<dialog class="detail" id="d-nearby" aria-labelledby="d-nearby-t">
+  <div class="dh">
+    <div><h3 id="d-nearby-t">Nearby Activity Finder</h3><p><span lang="en">Mobile app, team project, Hochschule Bremen, 2025</span><span lang="de">Mobile App, Teamprojekt, Hochschule Bremen, 2025</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <h4 lang="en">The idea</h4>
+    <h4 lang="de">Die Idee</h4>
+    <p lang="en">"What can we do today?" The app answers this by combining your location, the current weather and who you're with, then suggests activities nearby, for example indoor ideas when it rains.</p>
+    <p lang="de">„Was können wir heute machen?“ Die App beantwortet das, indem sie Standort, aktuelles Wetter und die Gruppe kombiniert und passende Aktivitäten in der Nähe vorschlägt, zum Beispiel Indoor-Ideen bei Regen.</p>
+    <h4 lang="en">What it does</h4>
+    <h4 lang="de">Was es kann</h4>
+    <ul lang="en"><li>Home screen with live weather for the current location</li><li>Filters to narrow down the suggestions</li><li>A map with clustered markers, so many places stay readable</li><li>Simple navigation between all screens</li></ul>
+    <ul lang="de"><li>Startseite mit Live-Wetter für den aktuellen Standort</li><li>Filter, um die Vorschläge einzugrenzen</li><li>Eine Karte mit Marker-Clustering, damit viele Orte übersichtlich bleiben</li><li>Einfache Navigation zwischen allen Screens</li></ul>
+    <h4 lang="en">My contribution</h4>
+    <h4 lang="de">Mein Beitrag</h4>
+    <p lang="en">I built the app interface in Flutter: the home screen with live weather, the filters, the navigation between screens and the map with clustered markers. Places and weather come from external APIs; user data is stored in Supabase.</p>
+    <p lang="de">Ich habe die App-Oberfläche in Flutter gebaut: die Startseite mit Live-Wetter, die Filter, die Navigation zwischen den Screens und die Karte mit Marker-Clustering. Orte und Wetter kommen aus externen APIs; Nutzerdaten liegen in Supabase.</p>
+    <p class="stack"><strong>Stack:</strong> Flutter, Dart, Next.js, Supabase, OpenWeatherMap, OpenRouteService, OpenTripMap</p><div class="dlinks"><a class="btn solid" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+  </div>
+</dialog>
+<dialog class="detail" id="d-freelance" aria-labelledby="d-freelance-t">
+  <div class="dh">
+    <div><h3 id="d-freelance-t"><span lang="en">Freelance logistics platform</span><span lang="de">Logistikplattform (freiberuflich)</span></h3><p><span lang="en">Client projects, 11/2022 – 06/2023</span><span lang="de">Kundenprojekte, 11/2022 – 06/2023</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <h4 lang="en">E-commerce and shipping platform</h4>
+    <h4 lang="de">E-Commerce- und Versandplattform</h4>
+    <p lang="en">A platform for a client selling and shipping goods across borders. Customers follow their parcel from order to delivery.</p>
+    <p lang="de">Eine Plattform für einen Kunden, der Waren grenzüberschreitend verkauft und versendet. Kunden verfolgen ihr Paket von der Bestellung bis zur Zustellung.</p>
+    <ul lang="en"><li>Shipment tracking with clear status steps</li><li>Every status change automatically sends the customer an SMS or WhatsApp message</li></ul>
+    <ul lang="de"><li>Sendungsverfolgung mit klaren Statusschritten</li><li>Jede Statusänderung schickt dem Kunden automatisch eine SMS oder WhatsApp-Nachricht</li></ul>
+    <h4 lang="en">Train management system</h4>
+    <h4 lang="de">Zugverwaltungssystem</h4>
+    <p lang="en">A second client project: a system to manage trains and their data, with QR codes to capture information quickly on site.</p>
+    <p lang="de">Ein zweites Kundenprojekt: ein System zur Verwaltung von Zügen und ihren Daten, mit QR-Codes zur schnellen Erfassung vor Ort.</p>
+    <p lang="en">Both were client projects, so the code isn't public.</p>
+    <p lang="de">Beides waren Kundenprojekte, daher ist der Code nicht öffentlich.</p>
+    <p class="stack"><strong>Stack:</strong> Laravel, PHP, Vue.js, MySQL</p>
+  </div>
+</dialog>
+<dialog class="detail" id="d-shipflow" aria-labelledby="d-shipflow-t">
+  <div class="dh">
+    <div><h3 id="d-shipflow-t">ShipFlow</h3><p><span lang="en">Event-driven logistics backend, personal project, in progress</span><span lang="de">Ereignisgesteuertes Logistik-Backend, eigenes Projekt, in Arbeit</span></p></div>
+    <button class="x" type="button" data-close aria-label="Close / Schließen">×</button>
+  </div>
+  <div class="db">
+    <h4 lang="en">Why this project</h4>
+    <h4 lang="de">Warum dieses Projekt</h4>
+    <p lang="en">In logistics, a status update that gets lost or processed twice means a wrong notification or a wrong invoice. ShipFlow is my practice ground for building distributed systems that stay correct when things go wrong.</p>
+    <p lang="de">In der Logistik bedeutet ein verlorenes oder doppelt verarbeitetes Status-Update eine falsche Benachrichtigung oder eine falsche Rechnung. ShipFlow ist mein Übungsfeld für verteilte Systeme, die auch bei Fehlern korrekt bleiben.</p>
+    <h4 lang="en">Planned architecture</h4>
+    <h4 lang="de">Geplante Architektur</h4>
+    <ul lang="en"><li>A shipment service that owns shipments and their status</li><li>Services that react to status changes, for example to notify customers</li><li>Communication only through RabbitMQ events, no direct calls between services</li><li>An Angular dashboard that shows shipments and events live</li></ul>
+    <ul lang="de"><li>Ein Shipment-Service, der Sendungen und ihren Status verwaltet</li><li>Services, die auf Statusänderungen reagieren, zum Beispiel für Kundenbenachrichtigungen</li><li>Kommunikation nur über RabbitMQ-Events, keine direkten Aufrufe zwischen Services</li><li>Ein Angular-Dashboard, das Sendungen und Events live anzeigt</li></ul>
+    <h4 lang="en">Reliability patterns</h4>
+    <h4 lang="de">Zuverlässigkeitsmuster</h4>
+    <ul lang="en"><li><strong>Transactional outbox:</strong> the status change and the event are saved in one transaction, so no event is lost</li><li><strong>Idempotent consumers:</strong> an event that arrives twice is only processed once</li><li><strong>Dead-letter queue:</strong> messages that keep failing are set aside for inspection instead of blocking the queue</li><li><strong>Testcontainers:</strong> integration tests against real PostgreSQL and RabbitMQ</li></ul>
+    <ul lang="de"><li><strong>Transactional Outbox:</strong> Statusänderung und Event werden in einer Transaktion gespeichert, so geht kein Event verloren</li><li><strong>Idempotente Consumer:</strong> ein doppelt ankommendes Event wird nur einmal verarbeitet</li><li><strong>Dead-Letter-Queue:</strong> dauerhaft fehlschlagende Nachrichten werden zur Analyse beiseitegelegt, statt die Queue zu blockieren</li><li><strong>Testcontainers:</strong> Integrationstests gegen echtes PostgreSQL und RabbitMQ</li></ul>
+    <h4 lang="en">Status</h4>
+    <h4 lang="de">Stand</h4>
+    <p lang="en">Planned in four sprints with GitHub issues and a project board. Follow the progress on GitHub.</p>
+    <p lang="de">In vier Sprints mit GitHub Issues und Projektboard geplant. Den Fortschritt gibt es auf GitHub.</p>
+    <p class="stack"><strong>Stack:</strong> Java, Spring Boot, RabbitMQ, PostgreSQL, Angular, Docker, Testcontainers, GitHub Actions</p><div class="dlinks"><a class="btn solid" href="https://github.com/oussama-abid/shipflow" target="_blank" rel="noopener"><span lang="en">Follow on GitHub</span><span lang="de">Auf GitHub verfolgen</span></a></div>
+  </div>
+</dialog>
 
 <script>
   (function () {
@@ -486,6 +674,31 @@
         apply(lang);
         try { localStorage.setItem("lang", lang); } catch (e) {}
       });
+    });
+
+    var opener = null;
+    function openDetail(id) {
+      var d = document.getElementById(id);
+      if (!d || d.open) return;
+      opener = document.activeElement;
+      d.showModal();
+      d.scrollTop = 0;
+      var body = d.querySelector(".db"); if (body) body.scrollTop = 0;
+    }
+    document.querySelectorAll("[data-open]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); openDetail(b.getAttribute("data-open")); });
+    });
+    document.querySelectorAll("[data-detail]").forEach(function (card) {
+      card.addEventListener("click", function (e) {
+        if (e.target.closest("a, button")) return;
+        if (window.getSelection && String(window.getSelection()).length) return;
+        openDetail(card.getAttribute("data-detail"));
+      });
+    });
+    document.querySelectorAll("dialog.detail").forEach(function (d) {
+      d.querySelector("[data-close]").addEventListener("click", function () { d.close(); });
+      d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+      d.addEventListener("close", function () { if (opener && opener.focus) opener.focus(); });
     });
   })();
 </script>
