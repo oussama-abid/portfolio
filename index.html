@@ -57,10 +57,10 @@
 
   .hero { padding: 88px 0 96px; }
   .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
-  .hello { display: flex; align-items: center; gap: 16px; font-size: 18px; color: var(--ink-2); margin: 0 0 22px; font-weight: 500; }
-  .hello img { width: 76px; height: 76px; border-radius: 50%; flex: none; border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--rule), 0 10px 24px -12px rgba(19,33,58,.5); }
+  .hello { display: flex; align-items: center; gap: 22px; font-size: 18px; color: var(--ink-2); margin: 0 0 22px; font-weight: 500; }
+  .hello img { width: 128px; height: 128px; border-radius: 50%; flex: none; border: 3px solid var(--paper); box-shadow: 0 0 0 1px var(--rule), 0 10px 24px -12px rgba(19,33,58,.5); }
   .me { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
-  .me img { width: 64px; height: 64px; border-radius: 50%; border: 2px solid #3A4E78; }
+  .me img { width: 84px; height: 84px; border-radius: 50%; border: 2px solid #3A4E78; }
   .me span { color: var(--night-text); font-size: 16px; line-height: 1.4; }
   .me b { display: block; color: #fff; font-weight: 600; }
   .hero h1 {
@@ -193,6 +193,8 @@
     .wrap { padding: 0 16px; }
     .bar nav { display: none; }
     .hero .pitch { font-size: 18px; }
+    .hello { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .hello img { width: 112px; height: 112px; }
     .run { font-size: 12.5px; }
     .run li { grid-template-columns: 18px 72px 1fr; }
     .run .t { display: none; }
@@ -231,7 +233,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="hello"><img src="oussama.jpg" width="400" height="400" alt="Portrait of Oussama Ben Abid"><span lang="en">Hi, I'm Oussama, a software developer in Bremen.</span><span lang="de">Hallo, ich bin Oussama, Softwareentwickler in Bremen.</span></p>
+        <p class="hello"><img src="oussama.jpg" width="480" height="480" alt="Portrait of Oussama Ben Abid"><span lang="en">Hi, I'm Oussama, a software developer in Bremen.</span><span lang="de">Hallo, ich bin Oussama, Softwareentwickler in Bremen.</span></p>
         <h1><span lang="en">I build software and ship it.</span><span lang="de">Ich baue Software und bringe sie live.</span></h1>
         <p class="pitch">
           <span lang="en">Computer Science Master's student at <strong>Hochschule Bremen</strong>. I take web applications from the database to automated deployment with <strong>Java, Spring Boot, Python, React and Angular</strong>, and add AI where it actually helps.</span>
@@ -449,7 +451,7 @@
   <div class="wrap">
     <h2><span lang="en">Looking for a working student?</span><span lang="de">Sie suchen einen Werkstudenten?</span></h2>
     <p><span lang="en">I'm available for up to 20 hours a week, in Bremen or remote. I'd be glad to hear from you.</span><span lang="de">Ich bin bis zu 20 Stunden pro Woche verfügbar, in Bremen oder remote. Ich freue mich auf Ihre Nachricht.</span></p>
-    <div class="me"><img src="oussama.jpg" width="400" height="400" alt="" loading="lazy"><span><b>Oussama Ben Abid</b><span lang="en">Software developer, Bremen</span><span lang="de">Softwareentwickler, Bremen</span></span></div>
+    <div class="me"><img src="oussama.jpg" width="480" height="480" alt="" loading="lazy"><span><b>Oussama Ben Abid</b><span lang="en">Software developer, Bremen</span><span lang="de">Softwareentwickler, Bremen</span></span></div>
     <a class="mail" href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a>
     <div class="cta">
       <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/">LinkedIn</a>
