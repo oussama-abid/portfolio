@@ -258,7 +258,6 @@
     .run ol { padding: 16px 16px 0; }
     .run .live { margin: 14px 16px 0; }
     .run li { grid-template-columns: 16px 58px 1fr; }
-    .hello img { width: 96px; height: 96px; }
     .mark { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
     .quick { gap: 6px; }
     .qbtn { height: 30px; padding: 0 8px; font-size: 13px; }
@@ -272,8 +271,23 @@
     .qbtn span:not([lang]) { display: none; }
     .qbtn { padding: 0 10px; }
     .hero .pitch { font-size: 18px; }
-    .hello { flex-direction: column; align-items: flex-start; gap: 16px; }
-    .hello img { width: 112px; height: 112px; }
+    .links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .links .btn { justify-content: center; padding: 12px 10px; }
+    .links .btn:only-child, .links .btn:first-child:nth-last-child(3) { grid-column: 1 / -1; }
+    .contact .cta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .contact .cta .btn { justify-content: center; }
+    .contact .cta .btn:last-child { grid-column: 1 / -1; }
+    .skills div { padding: 18px 20px; }
+    .contact h2 { font-size: 32px; line-height: 1.08; }
+    .contact .mail { font-size: 21px; }
+    .hero .cta { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .hero .cta .btn { justify-content: center; padding: 14px 12px; }
+    .hello { flex-direction: row; align-items: center; gap: 14px; font-size: 16px; margin-bottom: 18px; }
+    .hello img { width: 72px; height: 72px; }
+    .hero { padding: 28px 0 56px; }
+    .hero h1 { font-size: clamp(32px, 9vw, 40px); line-height: 1.05; margin-bottom: 18px; }
+    .hero .pitch { font-size: 17px; margin-bottom: 26px; }
+    .status { font-size: 14px; }
     .run { font-size: 12.5px; }
     .run li { grid-template-columns: 18px 72px 1fr; }
     .run .t { display: none; }
@@ -325,7 +339,7 @@
           <a class="btn solid" href="#work"><span lang="en">See my work</span><span lang="de">Projekte ansehen</span></a>
           <a class="btn" href="Lebenslauf_Oussama_Ben_Abid.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
-            <span lang="en">Download CV</span><span lang="de">Lebenslauf herunterladen</span>
+            <span lang="en">Download CV</span><span lang="de">Lebenslauf</span>
           </a>
           <a class="btn" href="https://github.com/oussama-abid" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
         </div>
@@ -405,11 +419,6 @@
             <span lang="en">Prototype for a joint research paper, developed independently: an agent orchestrator on Google Gemini breaks natural-language commands into subtasks and executes them through tool calling (smart home control, web search, YouTube, Gmail, speech). Made testable with a mocked LLM, reproducible evaluation and CI.</span>
             <span lang="de">Prototyp zu einer gemeinsamen wissenschaftlichen Arbeit, eigenständig entwickelt: Ein Agenten-Orchestrator auf Basis von Google Gemini zerlegt natürlichsprachliche Befehle in Teilaufgaben und führt sie per Tool-Calling aus (Smart-Home-Steuerung, Websuche, YouTube, Gmail, Sprache). Testbar gemacht mit gemocktem LLM, reproduzierbarer Evaluation und CI.</span>
           </p>
-          <div class="nums">
-            <div><b>100 %</b><span lang="en">intents recognised</span><span lang="de">der Absichten erkannt</span></div>
-            <div><b>72 %</b><span lang="en">tasks completed</span><span lang="de">der Aufgaben gelöst</span></div>
-            <div><b>36</b><span lang="en">test cases</span><span lang="de">Testfälle</span></div>
-          </div>
           <p class="stack"><strong>Stack:</strong> Python, Google Gemini, SQLite, pytest, Docker</p>
           <div class="links"><button class="btn more" type="button" data-open="d-living"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/living-smarter" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
         </article>
