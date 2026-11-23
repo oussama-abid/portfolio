@@ -368,16 +368,31 @@
       </article>
 
       <div class="grid">
-        <article class="proj full" data-detail="d-freelance">
+        <article class="proj" data-detail="d-freelance">
           <span class="pill"><i></i><span lang="en">Live, used daily</span><span lang="de">Live im Einsatz</span></span>
           <h3>Alashi</h3>
-          <p class="kind"><span lang="en">Logistics platform, freelance client project, 2023</span><span lang="de">Logistikplattform, freiberufliches Kundenprojekt, 2023</span></p>
+          <p class="kind"><span lang="en">Shipping and logistics platform, freelance, 04/2023 – 06/2023</span><span lang="de">Versand- und Logistikplattform, freiberuflich, 04/2023 – 06/2023</span></p>
           <p>
-            <span lang="en">The shipping and logistics platform of a customs and shipping company, still running in production. I built the core on my own: login, shipment, merchant and employee management, invoices, and shipment tracking with automatic WhatsApp updates.</span>
-            <span lang="de">Die Versand- und Logistikplattform eines Zoll- und Speditionsunternehmens, bis heute im produktiven Einsatz. Den Kern habe ich allein entwickelt: Login, Sendungs-, Händler- und Mitarbeiterverwaltung, Rechnungen sowie die Sendungsverfolgung mit automatischen WhatsApp-Updates.</span>
+            <span lang="en">The platform a cross-border shipping and e-commerce company uses every day to run its business. I built the core on my own: an admin dashboard to manage shipments, merchants and employees, shipment tracking with automatic WhatsApp messages, an invoice system and a landing page in four languages.</span>
+            <span lang="de">Die Plattform, mit der ein grenzüberschreitendes Versand- und E-Commerce-Unternehmen täglich arbeitet. Den Kern habe ich allein entwickelt: ein Admin-Dashboard für Sendungen, Händler und Mitarbeitende, Sendungsverfolgung mit automatischen WhatsApp-Nachrichten, ein Rechnungssystem und eine Landingpage in vier Sprachen.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Laravel, PHP, Vue.js, MySQL, Twilio</p>
           <div class="links"><button class="btn more" type="button" data-open="d-freelance"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://alashi.online" target="_blank" rel="noopener"><span lang="en">Visit live site</span><span lang="de">Live-Seite ansehen</span></a></div>
+        </article>
+
+        <article class="proj" data-detail="d-wali">
+          <h3>Wali-Bahn</h3>
+          <p class="kind"><span lang="en">Train management system, freelance, 11/2022 – 02/2023</span><span lang="de">Zugverwaltungssystem, freiberuflich, 11/2022 – 02/2023</span></p>
+          <p>
+            <span lang="en">A web application for a client to create and organise trains. New trains can be registered in seconds by scanning an image or a QR code instead of typing everything by hand.</span>
+            <span lang="de">Eine Webanwendung, mit der ein Kunde Züge anlegt und organisiert. Neue Züge lassen sich per Bild- oder QR-Code-Scan in Sekunden erfassen, statt alles von Hand einzutippen.</span>
+          </p>
+          <p class="mine">
+            <span lang="en">Built on my own, from planning to deployment.</span>
+            <span lang="de">Allein umgesetzt, von der Konzeption bis zur Bereitstellung.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Bootstrap</p>
+          <div class="links"><button class="btn more" type="button" data-open="d-wali"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button></div>
         </article>
         <article class="proj" data-detail="d-living">
           <h3>Living Smarter</h3>
@@ -492,7 +507,7 @@
           <div class="body">
             <h3><span lang="en">Freelance full-stack developer</span><span lang="de">Freiberuflicher Full-Stack-Entwickler</span></h3>
             <p class="org">Remote</p>
-            <p><span lang="en">Built the core of the Alashi logistics platform, still used in production, with tracking and automatic WhatsApp notifications; also a train management system with QR code capture.</span><span lang="de">Entwicklung des Kerns der Logistikplattform Alashi, bis heute im Einsatz, mit Sendungsverfolgung und automatischen WhatsApp-Benachrichtigungen, sowie eines Zugverwaltungssystems mit QR-Code-Erfassung.</span></p>
+            <p><span lang="en">Two client projects built on my own: Alashi, a shipping and logistics platform still used daily, and Wali-Bahn, a train management system with QR code capture.</span><span lang="de">Zwei Kundenprojekte, allein umgesetzt: Alashi, eine bis heute täglich genutzte Versand- und Logistikplattform, und Wali-Bahn, ein Zugverwaltungssystem mit QR-Code-Erfassung.</span></p>
           </div>
         </li>
         <li>
@@ -652,26 +667,60 @@
 </dialog>
 <dialog class="detail" id="d-freelance" aria-labelledby="d-freelance-t">
   <div class="dh">
-    <div><h3 id="d-freelance-t">Alashi</h3><p><span lang="en">Logistics platform, freelance client project, 04/2023 – 06/2023</span><span lang="de">Logistikplattform, freiberufliches Kundenprojekt, 04/2023 – 06/2023</span></p></div>
+    <div><h3 id="d-freelance-t">Alashi</h3><p><span lang="en">Shipping and logistics platform, freelance client project, 04/2023 – 06/2023</span><span lang="de">Versand- und Logistikplattform, freiberufliches Kundenprojekt, 04/2023 – 06/2023</span></p></div>
     <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">The project</h4>
     <h4 lang="de">Das Projekt</h4>
-    <p lang="en">Alashi is a customs and shipping company. I built the core of its logistics platform on my own as a freelancer, and the company still runs it in production today. Their team later adjusted parts of the frontend; the online shop on the site was built by someone else.</p>
-    <p lang="de">Alashi ist ein Zoll- und Speditionsunternehmen. Als Freelancer habe ich den Kern der Logistikplattform allein entwickelt, und das Unternehmen setzt sie bis heute produktiv ein. Teile des Frontends wurden später vom Team angepasst; der Onlineshop auf der Website stammt nicht von mir.</p>
+    <p lang="en">Alashi is a shipping and e-commerce company that sends goods across borders for its merchants. The company needed one system to run its daily work: register shipments, follow them to delivery, keep merchants and customers informed, and bill correctly. I built that system as a freelancer, and it is still live and used every day.</p>
+    <p lang="de">Alashi ist ein Versand- und E-Commerce-Unternehmen, das Waren für seine Händler grenzüberschreitend verschickt. Das Unternehmen brauchte ein System für das Tagesgeschäft: Sendungen erfassen, bis zur Zustellung verfolgen, Händler und Kunden informieren und korrekt abrechnen. Dieses System habe ich als Freelancer entwickelt, und es ist bis heute täglich im Einsatz.</p>
     <h4 lang="en">What I built</h4>
     <h4 lang="de">Was ich entwickelt habe</h4>
-    <ul lang="en"><li>Login for the company's staff</li><li>Shipment management: create shipments and move them through their statuses</li><li>Merchant management and employee management</li><li>Shipment tracking for customers</li><li>Automatic WhatsApp messages on every status change, sent through Twilio</li><li>Invoices for shipments and orders</li></ul>
-    <ul lang="de"><li>Login für die Mitarbeitenden</li><li>Sendungsverwaltung: Sendungen anlegen und durch ihre Status führen</li><li>Händler- und Mitarbeiterverwaltung</li><li>Sendungsverfolgung für Kunden</li><li>Automatische WhatsApp-Nachrichten bei jeder Statusänderung, versendet über Twilio</li><li>Rechnungen für Sendungen und Bestellungen</li></ul>
-    <h4 lang="en">Also freelance: train management system</h4>
-    <h4 lang="de">Ebenfalls freiberuflich: Zugverwaltungssystem</h4>
-    <p lang="en">A web application to create and organise trains, with image and QR code scanning to register new trains quickly, plus search, archive and PDF export (Laravel, MySQL, Bootstrap).</p>
-    <p lang="de">Eine Webanwendung zum Anlegen und Organisieren von Zügen, mit Bild- und QR-Code-Scan zur schnellen Erfassung neuer Züge sowie Suche, Archiv und PDF-Export (Laravel, MySQL, Bootstrap).</p>
-    <p lang="en">Both were client projects, so the code isn't public.</p>
-    <p lang="de">Da es sich um Kundenprojekte handelt, ist der Code nicht öffentlich.</p>
-    <p class="stack"><strong>Stack:</strong> Laravel, PHP, Vue.js, MySQL, Twilio</p>
+    <ul lang="en">
+      <li><strong>Admin dashboard with login</strong> for the company's staff</li>
+      <li><strong>Shipment management:</strong> create shipments and update their status until delivery</li>
+      <li><strong>Merchant management</strong> and <strong>employee management</strong></li>
+      <li><strong>Shipment tracking</strong> on the website, so customers can check where their shipment is</li>
+      <li><strong>Automatic WhatsApp messages</strong> through the Twilio API: every status change notifies the customer, and tracking updates arrive directly on WhatsApp</li>
+      <li><strong>Invoice system</strong> that generates invoices for shipments and orders</li>
+      <li><strong>Landing page in four languages</strong> (Arabic, English, Turkish, Hebrew), plus hosting and deployment</li>
+    </ul>
+    <ul lang="de">
+      <li><strong>Admin-Dashboard mit Login</strong> für die Mitarbeitenden</li>
+      <li><strong>Sendungsverwaltung:</strong> Sendungen anlegen und ihren Status bis zur Zustellung aktualisieren</li>
+      <li><strong>Händlerverwaltung</strong> und <strong>Mitarbeiterverwaltung</strong></li>
+      <li><strong>Sendungsverfolgung</strong> auf der Website, damit Kunden jederzeit sehen, wo ihre Sendung ist</li>
+      <li><strong>Automatische WhatsApp-Nachrichten</strong> über die Twilio-API: Jede Statusänderung benachrichtigt den Kunden, und Tracking-Updates kommen direkt per WhatsApp</li>
+      <li><strong>Rechnungssystem,</strong> das Rechnungen für Sendungen und Bestellungen erzeugt</li>
+      <li><strong>Landingpage in vier Sprachen</strong> (Arabisch, Englisch, Türkisch, Hebräisch) inklusive Hosting und Deployment</li>
+    </ul>
+    <h4 lang="en">Good to know</h4>
+    <h4 lang="de">Gut zu wissen</h4>
+    <p lang="en">The company's team later adjusted parts of the frontend, and the online shop on the site was built by someone else. Because it is a client project, the code isn't public, but the live site shows the result.</p>
+    <p lang="de">Das Team des Unternehmens hat später Teile des Frontends angepasst, und der Onlineshop auf der Website stammt nicht von mir. Da es ein Kundenprojekt ist, ist der Code nicht öffentlich, aber die Live-Seite zeigt das Ergebnis.</p>
+    <p class="stack"><strong>Stack:</strong> Laravel, PHP, Vue.js, MySQL, Twilio API</p>
     <div class="dlinks"><a class="btn solid" href="https://alashi.online" target="_blank" rel="noopener"><span lang="en">Visit live site</span><span lang="de">Live-Seite ansehen</span></a></div>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-wali" aria-labelledby="d-wali-t">
+  <div class="dh">
+    <div><h3 id="d-wali-t">Wali-Bahn</h3><p><span lang="en">Train management system, freelance client project, 11/2022 – 02/2023</span><span lang="de">Zugverwaltungssystem, freiberufliches Kundenprojekt, 11/2022 – 02/2023</span></p></div>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
+  </div>
+  <div class="db">
+    <h4 lang="en">The project</h4>
+    <h4 lang="de">Das Projekt</h4>
+    <p lang="en">Wali-Bahn is a web application to create, organise and find trains in one place. I designed, built and deployed it on my own.</p>
+    <p lang="de">Wali-Bahn ist eine Webanwendung, um Züge an einem Ort anzulegen, zu organisieren und wiederzufinden. Ich habe sie allein konzipiert, entwickelt und bereitgestellt.</p>
+    <h4 lang="en">What I built</h4>
+    <h4 lang="de">Was ich entwickelt habe</h4>
+    <ul lang="en"><li>Creating and organising trains and their details</li><li>Image and QR code scanning to register new trains quickly</li><li>Search and an archive for older entries</li><li>PDF export of the train list</li></ul>
+    <ul lang="de"><li>Anlegen und Organisieren von Zügen und ihren Details</li><li>Bild- und QR-Code-Scan, um neue Züge schnell zu erfassen</li><li>Suche und Archiv für ältere Einträge</li><li>PDF-Export der Zugliste</li></ul>
+    <p lang="en">Because it is a client project, the code isn't public.</p>
+    <p lang="de">Da es ein Kundenprojekt ist, ist der Code nicht öffentlich.</p>
+    <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Bootstrap</p>
   </div>
 </dialog>
 <dialog class="detail" id="d-shipflow" aria-labelledby="d-shipflow-t">
