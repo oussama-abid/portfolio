@@ -221,6 +221,10 @@
   .detail ol.steps li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; gap: 10px; background: var(--page); border-radius: 12px; padding: 11px 14px; margin: 0; }
   .detail ol.steps li::before { content: counter(s); font: 700 15px/1.6 var(--display); color: var(--cobalt); }
   .detail .shotd { border-radius: 12px; border: 1px solid var(--rule); margin: 18px 0 4px; }
+  .demo { margin: 18px 0 6px; }
+  .demo video { display: block; width: 100%; border-radius: 12px; border: 1px solid var(--rule); background: #0d1626; }
+  .demo.tall video { width: auto; max-width: 100%; max-height: 70vh; margin: 0 auto; }
+  .demo figcaption { font-size: 14px; color: var(--ink-2); margin-top: 8px; }
   .detail .dlinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
   .detail .stack { margin-top: 18px; }
   @media (max-width: 680px) {
@@ -407,8 +411,8 @@
         </article>
 
         <article class="proj" data-detail="d-nearby">
-          <h3>Nearby Activity Finder</h3>
-          <p class="kind"><span lang="en">Mobile app, team project, 2025</span><span lang="de">Mobile App, Teamprojekt, 2025</span></p>
+          <h3>Dayventure</h3>
+          <p class="kind"><span lang="en">Activity finder app (Nearby Activity Finder), team project, 2025</span><span lang="de">App für Freizeitaktivitäten (Nearby Activity Finder), Teamprojekt, 2025</span></p>
           <p>
             <span lang="en">A Flutter app that suggests things to do based on where you are, the weather and who you're with.</span>
             <span lang="de">Eine Flutter-App, die passende Freizeitaktivitäten vorschlägt, abgestimmt auf Standort, Wetter und Gruppe.</span>
@@ -418,7 +422,7 @@
             <span lang="de">Mein Beitrag: die App-Oberfläche, darunter die Startseite mit Live-Wetter, die Filter, die Navigation und eine Karte mit Marker-Clustering.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Flutter, Dart, Next.js, Supabase</p>
-          <div class="links"><button class="btn more" type="button" data-open="d-nearby"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+          <div class="links"><button class="btn more" type="button" data-open="d-nearby"><span lang="en">Details &amp; demo video</span><span lang="de">Details &amp; Demo-Video</span></button><a class="btn" href="https://github.com/oussama-abid/MCI-Nearby-Activity-Finder" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
         </article>
 
         
@@ -435,7 +439,7 @@
             <span lang="de">Mein Beitrag: der Großteil des Angular-Frontends (Buchung mit Kalender, Verwaltungsbereich, Echtzeit-Updates) und in der API das Datenmodell, der JWT-Login und die Termin-Endpunkte.</span>
           </p>
           <p class="stack"><strong>Stack:</strong> Angular, TypeScript, Node.js, Express, MySQL, Socket.IO</p>
-          <div class="links"><button class="btn more" type="button" data-open="d-medi"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/MediBooker" target="_blank" rel="noopener">Frontend</a><a class="btn" href="https://github.com/oussama-abid/MediBooker-ApI" target="_blank" rel="noopener">API</a></div>
+          <div class="links"><button class="btn more" type="button" data-open="d-medi"><span lang="en">Details &amp; demo video</span><span lang="de">Details &amp; Demo-Video</span></button><a class="btn" href="https://github.com/oussama-abid/MediBooker" target="_blank" rel="noopener">Frontend</a><a class="btn" href="https://github.com/oussama-abid/MediBooker-ApI" target="_blank" rel="noopener">API</a></div>
         </article>
 
         <article class="proj wide" data-detail="d-shipflow">
@@ -626,10 +630,11 @@
 </dialog>
 <dialog class="detail" id="d-nearby" aria-labelledby="d-nearby-t">
   <div class="dh">
-    <div><h3 id="d-nearby-t">Nearby Activity Finder</h3><p><span lang="en">Mobile app, team project, Hochschule Bremen, 2025</span><span lang="de">Mobile App, Teamprojekt, Hochschule Bremen, 2025</span></p></div>
+    <div><h3 id="d-nearby-t">Dayventure</h3><p><span lang="en">Mobile app, team project, Hochschule Bremen, 2025</span><span lang="de">Mobile App, Teamprojekt, Hochschule Bremen, 2025</span></p></div>
     <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
+    <figure class="demo tall"><video controls muted playsinline preload="none" poster="dayventure-poster.jpg"><source src="dayventure.mp4" type="video/mp4"></video><figcaption><span lang="en">Demo: weather, top suggestions, map with clusters, filters and settings</span><span lang="de">Demo: Wetter, Top-Vorschläge, Karte mit Clustern, Filter und Einstellungen</span></figcaption></figure>
     <h4 lang="en">The idea</h4>
     <h4 lang="de">Die Idee</h4>
     <p lang="en">"What can we do today?" The app answers this by combining your location, the current weather and who you're with, then suggests activities nearby, for example indoor ideas when it rains.</p>
@@ -700,6 +705,7 @@
     <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
+    <figure class="demo"><video controls muted playsinline preload="none" poster="medibooker-poster.jpg"><source src="medibooker.mp4" type="video/mp4"></video><figcaption><span lang="en">Demo: patient view and practice view side by side, with live updates when an appointment is booked</span><span lang="de">Demo: Patienten- und Praxisansicht nebeneinander, mit Live-Updates bei einer neuen Buchung</span></figcaption></figure>
     <h4 lang="en">The idea</h4>
     <h4 lang="de">Die Idee</h4>
     <p lang="en">Booking a doctor's appointment often still means calling during opening hours. MediBooker lets patients see free slots and book online, while the practice team keeps the whole schedule in one place.</p>
