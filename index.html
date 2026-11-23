@@ -51,6 +51,12 @@
   .bar nav { display: flex; gap: 24px; }
   .bar nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; font-weight: 500; }
   .bar nav a:hover { color: var(--ink); }
+  .quick { display: flex; gap: 8px; }
+  .qbtn { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: 600 14px/1 var(--body); text-decoration: none; }
+  .qbtn svg { width: 16px; height: 16px; }
+  .qbtn:hover { border-color: var(--ink); }
+  .qbtn.solid { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+  .qbtn.solid:hover { background: #1B3AB8; }
   .lang { display: inline-flex; background: var(--paper); border: 1px solid var(--rule); border-radius: 999px; padding: 3px; }
   .lang button { border: 0; background: none; font: 600 13px/1 var(--body); color: var(--ink-2); padding: 7px 12px; border-radius: 999px; cursor: pointer; }
   .lang button[aria-pressed="true"] { background: var(--ink); color: #fff; }
@@ -253,13 +259,18 @@
     .run .live { margin: 14px 16px 0; }
     .run li { grid-template-columns: 16px 58px 1fr; }
     .hello img { width: 96px; height: 96px; }
-    .mark { font-size: 17px; white-space: nowrap; }
+    .mark { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .quick { gap: 6px; }
+    .qbtn { height: 30px; padding: 0 8px; font-size: 13px; }
+    .lang button { padding: 6px 8px; }
     .bar .wrap { gap: 12px; }
   }
   @media (max-width: 680px) {
     body { font-size: 16px; }
     .wrap { padding: 0 16px; }
     .bar nav { display: none; }
+    .qbtn span:not([lang]) { display: none; }
+    .qbtn { padding: 0 10px; }
     .hero .pitch { font-size: 18px; }
     .hello { flex-direction: column; align-items: flex-start; gap: 16px; }
     .hello img { width: 112px; height: 112px; }
@@ -290,6 +301,10 @@
       <a href="#skills"><span lang="en">Skills</span><span lang="de">Technologien</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="de">Kontakt</span></a>
     </nav>
+    <div class="quick">
+      <a class="qbtn" href="https://github.com/oussama-abid" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg><span>GitHub</span></a>
+      <a class="qbtn solid" href="Lebenslauf_Oussama_Ben_Abid.pdf" target="_blank" rel="noopener"><span lang="en">CV</span><span lang="de">Lebenslauf</span></a>
+    </div>
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-set-lang="de" aria-pressed="false">DE</button>
