@@ -178,6 +178,8 @@
   .contact p { color: var(--night-text); font-size: 19px; max-width: 34em; margin: 0 0 36px; }
   .contact .mail { display: inline-block; font: 700 clamp(22px, 3.4vw, 36px)/1.2 var(--display); color: #fff; text-decoration: none; border-bottom: 3px solid #9DB4FF; padding-bottom: 4px; margin-bottom: 36px; word-break: break-all; }
   .contact .mail:hover { color: #9DB4FF; }
+  .contact .alt-mail { margin: -20px 0 36px; font-size: 17px; }
+  .contact .alt-mail a { color: #9DB4FF; }
   .contact .btn { background: transparent; color: #fff; border-color: #3A4E78; }
   .contact .btn:hover { border-color: #fff; }
   footer { background: var(--ink); color: #7F8FB0; font-size: 14px; padding: 0 0 40px; }
@@ -368,7 +370,7 @@
       </article>
 
       <div class="grid">
-        <article class="proj" data-detail="d-freelance">
+        <article class="proj full" data-detail="d-freelance">
           <span class="pill"><i></i><span lang="en">Live, used daily</span><span lang="de">Live im Einsatz</span></span>
           <h3>Alashi</h3>
           <p class="kind"><span lang="en">Shipping and logistics platform, freelance, 04/2023 – 06/2023</span><span lang="de">Versand- und Logistikplattform, freiberuflich, 04/2023 – 06/2023</span></p>
@@ -380,20 +382,7 @@
           <div class="links"><button class="btn more" type="button" data-open="d-freelance"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://alashi.online" target="_blank" rel="noopener"><span lang="en">Visit live site</span><span lang="de">Live-Seite ansehen</span></a></div>
         </article>
 
-        <article class="proj" data-detail="d-wali">
-          <h3>Wali-Bahn</h3>
-          <p class="kind"><span lang="en">Train management system, freelance, 11/2022 – 02/2023</span><span lang="de">Zugverwaltungssystem, freiberuflich, 11/2022 – 02/2023</span></p>
-          <p>
-            <span lang="en">A web application for a client to create and organise trains. New trains can be registered in seconds by scanning an image or a QR code instead of typing everything by hand.</span>
-            <span lang="de">Eine Webanwendung, mit der ein Kunde Züge anlegt und organisiert. Neue Züge lassen sich per Bild- oder QR-Code-Scan in Sekunden erfassen, statt alles von Hand einzutippen.</span>
-          </p>
-          <p class="mine">
-            <span lang="en">Built on my own, from planning to deployment.</span>
-            <span lang="de">Allein umgesetzt, von der Konzeption bis zur Bereitstellung.</span>
-          </p>
-          <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Bootstrap</p>
-          <div class="links"><button class="btn more" type="button" data-open="d-wali"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button></div>
-        </article>
+        
         <article class="proj" data-detail="d-living">
           <h3>Living Smarter</h3>
           <p class="kind"><span lang="en">LLM voice assistant for smart homes, research project, 2025</span><span lang="de">LLM-Sprachassistent für das Smart Home, Forschungsprojekt, 2025</span></p>
@@ -457,6 +446,36 @@
           <div class="links"><button class="btn more" type="button" data-open="d-medi"><span lang="en">Details &amp; demo video</span><span lang="de">Details &amp; Demo-Video</span></button><a class="btn" href="https://github.com/oussama-abid/MediBooker" target="_blank" rel="noopener">Frontend</a><a class="btn" href="https://github.com/oussama-abid/MediBooker-ApI" target="_blank" rel="noopener">API</a></div>
         </article>
 
+        <article class="proj" data-detail="d-wali">
+          <h3>Wali-Bahn</h3>
+          <p class="kind"><span lang="en">Wagon lists for rail freight, freelance, 11/2022 – 02/2023</span><span lang="de">Wagenlisten für den Schienengüterverkehr, freiberuflich, 11/2022 – 02/2023</span></p>
+          <p>
+            <span lang="en">Before a freight train leaves, the railway company needs a wagon list: every wagon with its weights, brake data and dangerous goods, plus the totals for the whole train. Wali-Bahn creates this list digitally. Staff add wagons (or read the wagon number from a photo), and the app produces the finished list as a PDF.</span>
+            <span lang="de">Bevor ein Güterzug abfährt, braucht das Eisenbahnunternehmen eine Wagenliste: jeden Wagen mit Gewichten, Bremsdaten und Gefahrgut sowie die Summen für den ganzen Zug. Wali-Bahn erstellt diese Liste digital. Mitarbeitende erfassen die Wagen (oder lesen die Wagennummer aus einem Foto), und die App erzeugt die fertige Liste als PDF.</span>
+          </p>
+          <p class="mine">
+            <span lang="en">Developed in a small team; I wrote most of the code, including the PDF export, the photo recognition and the validation.</span>
+            <span lang="de">In einem kleinen Team entwickelt; den Großteil des Codes habe ich geschrieben, darunter den PDF-Export, die Fotoerkennung und die Validierung.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Bootstrap, Tesseract.js, DomPDF</p>
+          <div class="links"><button class="btn more" type="button" data-open="d-wali"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button></div>
+        </article>
+
+        <article class="proj" data-detail="d-library">
+          <h3><span lang="en">Digital thesis library</span><span lang="de">Digitale Bibliothek für Abschlussarbeiten</span></h3>
+          <p class="kind"><span lang="en">Bachelor final project at Intuitiv Groupe, team project, 02/2022 – 06/2022</span><span lang="de">Bachelor-Abschlussprojekt bei Intuitiv Groupe, Teamprojekt, 02/2022 – 06/2022</span></p>
+          <p>
+            <span lang="en">A platform where universities publish final theses together with related patents and research papers. Students submit their work for approval, and readers request to borrow documents and read them online. It runs as a web app, a REST API and a mobile app.</span>
+            <span lang="de">Eine Plattform, auf der Hochschulen Abschlussarbeiten samt zugehöriger Patente und Forschungsarbeiten veröffentlichen. Studierende reichen ihre Arbeiten zur Freigabe ein, und Leser beantragen die Ausleihe von Dokumenten und lesen sie online. Sie besteht aus Web-App, REST-API und Mobile-App.</span>
+          </p>
+          <p class="mine">
+            <span lang="en">My part: large parts of the Laravel API, the admin dashboard with charts, notifications, and the Flutter app.</span>
+            <span lang="de">Mein Beitrag: große Teile der Laravel-API, das Admin-Dashboard mit Diagrammen, die Benachrichtigungen und die Flutter-App.</span>
+          </p>
+          <p class="stack"><strong>Stack:</strong> Laravel, Vue.js, Flutter, MySQL, Chart.js</p>
+          <div class="links"><button class="btn more" type="button" data-open="d-library"><span lang="en">Project details</span><span lang="de">Projektdetails</span></button><a class="btn" href="https://github.com/oussama-abid/Intuitiv-Interactiv" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
+        </article>
+
         <article class="proj wide" data-detail="d-shipflow">
           <div>
             <span class="pill wip"><i></i><span lang="en">In progress</span><span lang="de">In Arbeit</span></span>
@@ -507,15 +526,15 @@
           <div class="body">
             <h3><span lang="en">Freelance full-stack developer</span><span lang="de">Freiberuflicher Full-Stack-Entwickler</span></h3>
             <p class="org">Remote</p>
-            <p><span lang="en">Two client projects built on my own: Alashi, a shipping and logistics platform still used daily, and Wali-Bahn, a train management system with QR code capture.</span><span lang="de">Zwei Kundenprojekte, allein umgesetzt: Alashi, eine bis heute täglich genutzte Versand- und Logistikplattform, und Wali-Bahn, ein Zugverwaltungssystem mit QR-Code-Erfassung.</span></p>
+            <p><span lang="en">Client projects: Alashi, a shipping and logistics platform I built on my own and that is still used daily, and Wali-Bahn, an app that creates wagon lists for rail freight trains.</span><span lang="de">Kundenprojekte: Alashi, eine allein entwickelte und bis heute täglich genutzte Versand- und Logistikplattform, sowie Wali-Bahn, eine App zur Erstellung von Wagenlisten für Güterzüge.</span></p>
           </div>
         </li>
         <li>
           <time>02 – 06/2022</time>
           <div class="body">
-            <h3><span lang="en">Software development intern</span><span lang="de">Praktikant Softwareentwicklung</span></h3>
-            <p class="org"><span lang="en">Intuitive Interactive, Tunisia</span><span lang="de">Intuitive Interactive, Tunesien</span></p>
-            <p><span lang="en">Web and mobile app for an online university library with Laravel, Vue.js and Flutter.</span><span lang="de">Entwicklung einer Web- und Mobil-App für eine digitale Universitätsbibliothek mit Laravel, Vue.js und Flutter.</span></p>
+            <h3><span lang="en">Software development intern, Bachelor final project</span><span lang="de">Praktikant Softwareentwicklung, Bachelor-Abschlussprojekt</span></h3>
+            <p class="org"><span lang="en">Intuitiv Groupe, Tunisia</span><span lang="de">Intuitiv Groupe, Tunesien</span></p>
+            <p><span lang="en">A digital library for final theses, as a web app, REST API and mobile app (Laravel, Vue.js, Flutter).</span><span lang="de">Eine digitale Bibliothek für Abschlussarbeiten als Web-App, REST-API und Mobile-App (Laravel, Vue.js, Flutter).</span></p>
           </div>
         </li>
         <li>
@@ -553,7 +572,8 @@
     <h2><span lang="en">Looking for a working student?</span><span lang="de">Sie suchen einen Werkstudenten?</span></h2>
     <p><span lang="en">I'm available for up to 20 hours a week, in Bremen or remote. I'd be glad to hear from you.</span><span lang="de">Ich unterstütze Ihr Team mit bis zu 20 Stunden pro Woche, vor Ort in Bremen oder remote. Ich freue mich auf Ihre Nachricht.</span></p>
     <div class="me"><img src="oussama.jpg" width="480" height="480" alt="" loading="lazy"><span><b>Oussama Ben Abid</b><span lang="en">Software developer, Bremen</span><span lang="de">Softwareentwickler, Bremen</span></span></div>
-    <a class="mail" href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a>
+    <a class="mail" href="mailto:oussamaabid52@gmail.com">oussamaabid52@gmail.com</a>
+    <p class="alt-mail"><span lang="en">or</span><span lang="de">oder</span> <a href="mailto:oben-abid@stud.hs-bremen.de">oben-abid@stud.hs-bremen.de</a></p>
     <div class="cta">
       <a class="btn" href="https://www.linkedin.com/in/oussama-ben-abid/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn" href="https://github.com/oussama-abid" target="_blank" rel="noopener">GitHub</a>
@@ -706,21 +726,84 @@
 
 <dialog class="detail" id="d-wali" aria-labelledby="d-wali-t">
   <div class="dh">
-    <div><h3 id="d-wali-t">Wali-Bahn</h3><p><span lang="en">Train management system, freelance client project, 11/2022 – 02/2023</span><span lang="de">Zugverwaltungssystem, freiberufliches Kundenprojekt, 11/2022 – 02/2023</span></p></div>
+    <div><h3 id="d-wali-t">Wali-Bahn</h3><p><span lang="en">Wagon lists for rail freight, freelance client project, 11/2022 – 02/2023</span><span lang="de">Wagenlisten für den Schienengüterverkehr, freiberufliches Kundenprojekt, 11/2022 – 02/2023</span></p></div>
+    <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
+  </div>
+  <div class="db">
+    <h4 lang="en">The problem</h4>
+    <h4 lang="de">Das Problem</h4>
+    <p lang="en">Every freight train needs a wagon list before it departs. It records each wagon's number, type, length over buffers, tare weight, load, axles, brake weight and brake position, damaged wagons and dangerous goods with their UN number, and it adds everything up for the whole train.</p>
+    <p lang="de">Jeder Güterzug braucht vor der Abfahrt eine Wagenliste. Sie enthält für jeden Wagen Nummer, Gattung, Länge über Puffer, Eigenmasse, Ladung, Achsen, Bremsgewicht und Bremsstellung, Schadwagen sowie Gefahrgut mit UN-Nummer, und sie summiert alles für den ganzen Zug.</p>
+    <h4 lang="en">What the app does</h4>
+    <h4 lang="de">Was die App kann</h4>
+    <ul lang="en">
+      <li><strong>Trains and wagons:</strong> create a train with its route, date, train number and operator, then add its wagons with all technical and brake data</li>
+      <li><strong>Wagon number from a photo:</strong> take a picture of the wagon, crop the number and the app reads it with text recognition (Tesseract.js)</li>
+      <li><strong>Built-in checks:</strong> the 12-digit wagon number is validated with its check digit, and required fields are validated before saving</li>
+      <li><strong>PDF wagon list:</strong> one click creates the finished list as a PDF, with the company logo, automatic page breaks and totals for length, weights, axles and brake weights</li>
+      <li><strong>Wagon archive:</strong> wagons that run often are saved once and reused, so a new list is filled in minutes</li>
+      <li><strong>Revision reminders:</strong> wagons whose inspection date is due are highlighted in the lists</li>
+      <li><strong>Search and filters</strong> across trains and wagons</li>
+      <li><strong>Roles:</strong> administrator, company owner and employees; the owner manages their own staff, and password reset works by email</li>
+    </ul>
+    <ul lang="de">
+      <li><strong>Züge und Wagen:</strong> Zug mit Strecke, Datum, Zugnummer und Eisenbahnverkehrsunternehmen anlegen, dann die Wagen mit allen technischen und bremstechnischen Daten erfassen</li>
+      <li><strong>Wagennummer per Foto:</strong> Wagen fotografieren, Nummer zuschneiden, und die App liest sie per Texterkennung (Tesseract.js)</li>
+      <li><strong>Eingebaute Prüfungen:</strong> Die 12-stellige Wagennummer wird über ihre Prüfziffer validiert, Pflichtfelder werden vor dem Speichern geprüft</li>
+      <li><strong>Wagenliste als PDF:</strong> Ein Klick erzeugt die fertige Liste als PDF, mit Firmenlogo, automatischen Seitenumbrüchen und Summen für Länge, Gewichte, Achsen und Bremsgewichte</li>
+      <li><strong>Wagenarchiv:</strong> Häufig eingesetzte Wagen werden einmal gespeichert und wiederverwendet, so ist eine neue Liste in Minuten ausgefüllt</li>
+      <li><strong>Revisionserinnerung:</strong> Wagen mit fälliger Revision werden in den Listen hervorgehoben</li>
+      <li><strong>Suche und Filter</strong> über Züge und Wagen</li>
+      <li><strong>Rollen:</strong> Administrator, Firmenchef und Mitarbeitende; der Firmenchef verwaltet sein eigenes Team, Passwort-Reset per E-Mail</li>
+    </ul>
+    <h4 lang="en">My contribution</h4>
+    <h4 lang="de">Mein Beitrag</h4>
+    <p lang="en">We built it in a small team for a client, and I wrote most of the code: the data model for trains and wagons, the wagon and archive forms with validation and the check-digit test, the photo recognition, the PDF export with its totals, and the roles and user management.</p>
+    <p lang="de">Wir haben die App in einem kleinen Team für einen Kunden entwickelt, und den Großteil des Codes habe ich geschrieben: das Datenmodell für Züge und Wagen, die Wagen- und Archivformulare mit Validierung und Prüfziffern-Test, die Fotoerkennung, den PDF-Export mit den Summen sowie Rollen und Benutzerverwaltung.</p>
+    <p lang="en">Because it is a client project, the code isn't public.</p>
+    <p lang="de">Da es ein Kundenprojekt ist, ist der Code nicht öffentlich.</p>
+    <p class="stack"><strong>Stack:</strong> Laravel 8, PHP, MySQL, Blade, Bootstrap, JavaScript, Tesseract.js, Cropper.js, DomPDF</p>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-library" aria-labelledby="d-library-t">
+  <div class="dh">
+    <div><h3 id="d-library-t"><span lang="en">Digital thesis library</span><span lang="de">Digitale Bibliothek für Abschlussarbeiten</span></h3><p><span lang="en">Bachelor final project at Intuitiv Groupe, Tunisia, 02/2022 – 06/2022</span><span lang="de">Bachelor-Abschlussprojekt bei Intuitiv Groupe, Tunesien, 02/2022 – 06/2022</span></p></div>
     <button class="x" type="button" data-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span lang="en">Close</span><span lang="de">Schließen</span></button>
   </div>
   <div class="db">
     <h4 lang="en">The project</h4>
     <h4 lang="de">Das Projekt</h4>
-    <p lang="en">Wali-Bahn is a web application to create, organise and find trains in one place. I designed, built and deployed it on my own.</p>
-    <p lang="de">Wali-Bahn ist eine Webanwendung, um Züge an einem Ort anzulegen, zu organisieren und wiederzufinden. Ich habe sie allein konzipiert, entwickelt und bereitgestellt.</p>
-    <h4 lang="en">What I built</h4>
-    <h4 lang="de">Was ich entwickelt habe</h4>
-    <ul lang="en"><li>Creating and organising trains and their details</li><li>Image and QR code scanning to register new trains quickly</li><li>Search and an archive for older entries</li><li>PDF export of the train list</li></ul>
-    <ul lang="de"><li>Anlegen und Organisieren von Zügen und ihren Details</li><li>Bild- und QR-Code-Scan, um neue Züge schnell zu erfassen</li><li>Suche und Archiv für ältere Einträge</li><li>PDF-Export der Zugliste</li></ul>
-    <p lang="en">Because it is a client project, the code isn't public.</p>
-    <p lang="de">Da es ein Kundenprojekt ist, ist der Code nicht öffentlich.</p>
-    <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Bootstrap</p>
+    <p lang="en">Final theses usually sit in university archives where few people can find them. For my Bachelor's final project at Intuitiv Groupe, we built a platform that makes them searchable and readable online, while each university keeps control over who may access what.</p>
+    <p lang="de">Abschlussarbeiten liegen meist in Hochschularchiven, wo sie kaum jemand findet. In meinem Bachelor-Abschlussprojekt bei Intuitiv Groupe haben wir eine Plattform entwickelt, die sie online durchsuchbar und lesbar macht, während jede Hochschule kontrolliert, wer worauf zugreifen darf.</p>
+    <h4 lang="en">What it does</h4>
+    <h4 lang="de">Funktionen</h4>
+    <ul lang="en">
+      <li><strong>Catalogue:</strong> theses organised by institution, field, supervisor and company, with search and filters</li>
+      <li><strong>Submission:</strong> students upload their thesis as a PDF with a cover image and, if available, patent and research files; an administrator approves or rejects it</li>
+      <li><strong>Borrowing:</strong> readers request a document; admins approve or reject, with a maximum loan period and a limit on open requests</li>
+      <li><strong>Reading online:</strong> documents open in the browser or app, and downloading is blocked to protect the authors</li>
+      <li><strong>Notifications</strong> when a request is approved or rejected</li>
+      <li><strong>Admin dashboard</strong> with charts on documents, requests and users, plus account approval</li>
+      <li><strong>Mobile app</strong> with the same catalogue and a built-in PDF reader</li>
+    </ul>
+    <ul lang="de">
+      <li><strong>Katalog:</strong> Abschlussarbeiten nach Hochschule, Fachgebiet, Betreuer und Unternehmen, mit Suche und Filtern</li>
+      <li><strong>Einreichung:</strong> Studierende laden ihre Abschlussarbeit als PDF mit Titelbild und gegebenenfalls Patent- und Forschungsdateien hoch; ein Administrator gibt sie frei oder lehnt sie ab</li>
+      <li><strong>Ausleihe:</strong> Leser beantragen ein Dokument; Admins genehmigen oder lehnen ab, mit maximaler Ausleihdauer und Begrenzung offener Anfragen</li>
+      <li><strong>Online lesen:</strong> Dokumente öffnen sich im Browser oder in der App, der Download ist zum Schutz der Autoren gesperrt</li>
+      <li><strong>Benachrichtigungen,</strong> wenn eine Anfrage genehmigt oder abgelehnt wird</li>
+      <li><strong>Admin-Dashboard</strong> mit Diagrammen zu Dokumenten, Anfragen und Nutzern sowie Freigabe neuer Konten</li>
+      <li><strong>Mobile App</strong> mit demselben Katalog und integriertem PDF-Reader</li>
+    </ul>
+    <h4 lang="en">My contribution</h4>
+    <h4 lang="de">Mein Beitrag</h4>
+    <p lang="en">We were a team, and I wrote just over half of the commits:</p>
+    <p lang="de">Wir waren ein Team, und gut die Hälfte der Commits stammt von mir:</p>
+    <ul lang="en"><li>The Laravel REST API: data model, migrations and CRUD for all entities, token login and protected routes</li><li>File uploads for theses and submission requests, with validation of file types and dates</li><li>The approval flows for accounts, submissions and loans, including loan limits and maximum loan days</li><li>Notifications in the backend and the frontend</li><li>The admin dashboard in Vue.js with charts, search and filters</li><li>The Flutter mobile app and the contact form by email</li></ul>
+    <ul lang="de"><li>Die Laravel-REST-API: Datenmodell, Migrationen und CRUD für alle Entitäten, Token-Login und geschützte Routen</li><li>Datei-Uploads für Abschlussarbeiten und Einreichungen, mit Validierung von Dateitypen und Datumsangaben</li><li>Die Freigabeprozesse für Konten, Einreichungen und Ausleihen, inklusive Ausleihlimits und maximaler Ausleihdauer</li><li>Benachrichtigungen im Backend und im Frontend</li><li>Das Admin-Dashboard in Vue.js mit Diagrammen, Suche und Filtern</li><li>Die Flutter-App und das Kontaktformular per E-Mail</li></ul>
+    <p class="stack"><strong>Stack:</strong> Laravel, PHP, MySQL, Vue.js 3, Vue Router, Chart.js, Bootstrap, Flutter, Dart</p>
+    <div class="dlinks"><a class="btn solid" href="https://github.com/oussama-abid/Intuitiv-Interactiv" target="_blank" rel="noopener"><span lang="en">View code</span><span lang="de">Code ansehen</span></a></div>
   </div>
 </dialog>
 <dialog class="detail" id="d-shipflow" aria-labelledby="d-shipflow-t">
